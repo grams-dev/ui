@@ -1,4 +1,5 @@
 import "../src/index.css";
+import "semantic-ui-css/semantic.min.css";
 /**
  * Read https://storybook.js.org/docs/react/configure/overview#configure-story-rendering
  * for more information about the purpose of this file.

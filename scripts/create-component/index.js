@@ -1,5 +1,6 @@
 require("colors");
 const fs = require("fs");
+const path = require("path");
 const templates = require("./templates");
 
 const componentName = process.argv[2];
@@ -11,7 +12,7 @@ if (!componentName) {
 
 console.log("Creating Component Templates with name: " + componentName);
 
-const componentDirectory = `./src/${componentName}`;
+const componentDirectory = path.join(__dirname, '..', '..', 'src', 'components', componentName);
 
 if (fs.existsSync(componentDirectory)) {
   console.error(`Component ${componentName} already exists.`.red);

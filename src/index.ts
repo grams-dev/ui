@@ -1,3 +1,5 @@
-import TestComponent from "./TestComponent";
+import SelectLocale from "./components/SelectLocale/SelectLocale";
 
-export { TestComponent };
+export { 
+    SelectLocale
+};

@@ -1,7 +1,8 @@
 # @grams.dev/ui
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/grams-dev/ui/blob/main/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@grams.dev/ui)](https://www.npmjs.com/package/@grams.dev/ui)
+[![npm downloads](https://img.shields.io/npm/dm/@grams.dev/ui)](https://www.npmjs.com/package/@grams.dev/ui)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/grams-dev/ui/blob/main/LICENSE)
 
 The `@grams.dev/ui` package is a collection of UI components designed for use with the Grams ecosystem. It provides developers with a set of reusable and customizable UI elements to create user-friendly decentralized applications (dApps).
 

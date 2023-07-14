@@ -1,22 +1,68 @@
-# React Component Library
+# @grams.dev/ui
 
-[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/grams-dev/ui/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@grams.dev/ui)](https://www.npmjs.com/package/@grams.dev/ui)
 
-This project skeleton was created to help people get started with creating their own React component library using:
+The `@grams.dev/ui` package is a collection of UI components designed for use with the Grams ecosystem. It provides developers with a set of reusable and customizable UI elements to create user-friendly decentralized applications (dApps).
 
-- [Rollup](https://github.com/rollup/rollup)
-- [TypeScript](https://www.typescriptlang.org/)
-- ~~Sass~~ (This dependency has been removed, see [Using CSS Preprocessors](#using-css-preprocessors) on how to support it)
+## Features
 
-It also features:
+- **UI Components**: A library of pre-built UI components tailored for Grams dApps.
+- **Theme Customization**: Easily customize the appearance and styling of components to match your dApp's design.
+- **Responsive Design**: Components are optimized for various screen sizes and devices, ensuring a seamless user experience.
+- **Accessibility**: Prioritizes accessibility standards to ensure that all users can interact with your dApp.
+- **Easy Integration**: Simple integration with existing Grams projects or new dApps being built from scratch.
 
-- [Storybook](https://storybook.js.org/) to help you create and show off your components
-- [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
+## Installation
 
-[**Read my blog post about why and how I created this project skeleton ▸**](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
+You can install the `@grams.dev/ui` package via your preferred package manager.
 
-[Check out this CodeSandbox to see the component library in action ▸](https://codesandbox.io/s/harvey-component-library-example-y2b60)
+### npm
+
+```shell
+npm install @grams.dev/ui
+```
+
+### Yarn
+
+```shell
+yarn add @grams.dev/ui
+```
+
+## Usage
+
+Once installed, you can import and use the UI components in your Grams dApp. Here's an example of how to use a Button component:
+
+```jsx
+import React from 'react';
+import { Button } from '@grams.dev/ui';
+
+const MyComponent = () => {
+  return (
+    <Button variant="primary" onClick={() => console.log('Button clicked')}>
+      Click Me
+    </Button>
+  );
+};
+```
+
+You can customize the appearance and behavior of the UI components using the provided props and CSS styles.
+
+For more detailed information and examples, refer to the [Grams UI Documentation](https://github.com/grams-dev/grams-ui).
+
+## Documentation
+
+Comprehensive documentation for @grams.dev/ui is available at [https://github.com/grams-foundation/grams-ui](https://github.com/grams-dev/grams-ui). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
+
+## Contributing
+
+Contributions to `@grams.dev/ui` are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/grams-dev/grams-ui).
+
+When contributing, please adhere to the existing code style and guidelines.
+
+## License
+
+The `@grams.dev/ui` package is open source and distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Your contributions to the project are appreciated and will be licensed accordingly.
 
 ## Development
 
@@ -46,8 +92,6 @@ To export your Storybook as static files:
 npm run storybook:export
 ```
 
-You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.harveydelaney.com/react-component-library
-
 ### Generating New Components
 
 I've included a handy NodeJS util file under `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
@@ -72,50 +116,6 @@ The default templates for each file can be modified under `util/templates`.
 
 Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
 
-### Installing Component Library Locally
-
-Let's say you have another project (`test-app`) on your machine that you want to try installing the component library into without having to first publish the component library. In the `test-app` directory, you can run:
-
-```
-npm i --save ../react-component-library
-```
-
-which will install the local component library as a dependency in `test-app`. It'll then appear as a dependency in `package.json` like:
-
-```
-  ...
-  "dependencies": {
-    ...
-    "react-component-library": "file:../react-component-library",
-    ...
-  },
-  ...
-```
-
-Your components can then be imported and used in that project.
-
-**NOTE**: After installing the component library locally, you may run into:
-
-```
-Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-
-You might have mismatching versions of React and the renderer (such as React DOM)
-You might be breaking the Rules of Hooks
-You might have more than one copy of React in the same app See for tips about how to debug and fix this problem.
-```
-
-This is the most commonly encountered problem people face when installing the library locally. This is most likely due to the third reason: `You might have more than one copy of React in the app`.
-
-Normally when a library is published, dev dependencies are excluded. However, when the library is symlinked, all local dev depdendencies are persisted in the libraries `node_modules` (includes React). Your bundler may see two versions of React, one in the consuming app and one in the symlinked library. The solution is to have the component library use the React version in the consuming app. So from your component library folder, run:
-
-```
-npm link ../test-app/node_modules/react
-```
-
-**OR**, if you are using Webpack in app you can follow [this GitHub comment](https://github.com/facebook/react/issues/13991#issuecomment-435587809).
-
-Read more about this issue [here](https://reactjs.org/warnings/invalid-hook-call-warning.html).
-
 ## Publishing
 
 ### Hosting via NPM
@@ -139,13 +139,13 @@ You'll need to remove `build/` from `.gitignore`, build the component library (`
 You can then install your library into other projects by running:
 
 ```
-npm i --save git+https://github.com/HarveyD/react-component-library.git#branch-name
+npm i --save git+https://github.com/grams-dev/ui.git#branch-name
 ```
 
 OR
 
 ```
-npm i --save github:harveyd/react-component-library#branch-name
+npm i --save github:grams-dev/ui#branch-name
 ```
 
 ## Usage
@@ -168,7 +168,7 @@ Usage of components (after the library installed as a dependency into another pr
 
 ```TSX
 import React from "react";
-import { TestComponent } from "harvey-component-library";
+import { TestComponent } from "@grams.dev/ui";
 
 const App = () => (
   <div className="app-container">

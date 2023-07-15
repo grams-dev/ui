@@ -15,10 +15,10 @@
     "build": "rollup -c",
     "test": "jest",
     "test:watch": "jest --watch",
-    "generate:component": "node ./scripts/create-component",
-    "generate:page": "node ./scripts/create-page",
+    "create:component": "node ./scripts/create-component",
+    "create:page": "node ./scripts/create-page",
     "prepublishOnly": "npm run build",
-    "storybook:start": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build && npm run build:cname",
     "build:cname": "cpx ./CNAME ./storybook-static/"
   },
@@ -33,6 +33,7 @@
   "peerDependencies": {
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
+    "react-notifications": "^1.7.4",
     "semantic-ui-react": ">=2.1.4"
   },
   "devDependencies": {
@@ -41,6 +42,8 @@
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
     "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-image": "^3.0.2",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",
@@ -66,6 +69,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.1",
     "rollup": "^2.79.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -75,5 +79,8 @@
     "storybook": "^7.0.27",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@grams.dev/assets": "^0.0.2"
   }
 }

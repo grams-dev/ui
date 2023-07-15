@@ -40,7 +40,7 @@ import { Button } from '@grams.dev/ui';
 
 const MyComponent = () => {
   return (
-    <Button variant="primary" onClick={() => console.log('Button clicked')}>
+    <Button onClick={() => console.log('Button clicked')}>
       Click Me
     </Button>
   );
@@ -53,11 +53,11 @@ For more detailed information and examples, refer to the [Grams UI Documentation
 
 ## Documentation
 
-Comprehensive documentation for @grams.dev/ui is available at [https://github.com/grams-foundation/grams-ui](https://github.com/grams-dev/grams-ui). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
+Comprehensive documentation for @grams.dev/ui is available at [https://storybook.grams.dev](https://storybook.grams.dev). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
 
 ## Contributing
 
-Contributions to `@grams.dev/ui` are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/grams-dev/grams-ui).
+Contributions to `@grams.dev/ui` are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/grams-dev/ui).
 
 When contributing, please adhere to the existing code style and guidelines.
 
@@ -90,32 +90,48 @@ npm run storybook
 To export your Storybook as static files:
 
 ```
-npm run storybook:export
+npm run build:storybook
 ```
 
-### Generating New Components
+This will also copy the CNAME from the root directory to the static files. You can change it to any CNAME you want. 
 
-I've included a handy NodeJS util file under `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
+## Scripts
 
-```
-npm run generate YourComponentName
-```
+Grams UI provides several convenient scripts to help with development and maintenance of the library.
 
-This will generate:
+### `/create-component`
 
-```
-/src
-  /YourComponentName
-    YourComponentName.tsx
-    YourComponentName.stories.tsx
-    YourComponentName.test.tsx
-    YourComponentName.types.ts
-    YourComponentName.css
+The `/create-component` script is used to generate a new UI component in the Grams UI library. It automates the process of setting up the component's file structure, boilerplate code, and test files. To use this script, run the following command:
+
+```shell
+npm run create:component <ComponentName>
 ```
 
-The default templates for each file can be modified under `util/templates`.
+Replace `<ComponentName>` with the desired name of your component, using PascalCase. This script will create a new folder in the `src/components` directory with the specified component name, along with the necessary files and directory structure.
 
-Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
+### `/create-page`
+
+The `/create-page` script is used to generate a new page component in the Grams UI library. Similar to the `/create-component` script, it sets up the file structure and boilerplate code for a new page component. To use this script, run the following command:
+
+```shell
+npm run create:page <PageName>
+```
+
+Replace `<PageName>` with the desired name of your page component, using PascalCase. This script will create a new folder in the `src/pages` directory with the specified page name, along with the necessary files and directory structure.
+
+### `/release`
+
+The `/release` script automates the process of releasing a new version of the Grams UI library. It performs various tasks such as version bumping, creating release notes, generating changelogs, and publishing the package to the package registry. To use this script, run the following command:
+
+```shell
+npm run release
+```
+
+This script will guide you through the release process, prompting for version updates and generating necessary release files. It ensures that the release process is streamlined and follows best practices.
+
+Make sure to review and update the relevant configuration files (such as `package.json` and `CHANGELOG.md`) before running the release script to ensure accurate versioning and documentation.
+
+These scripts provide a convenient way to perform common tasks when developing and maintaining the Grams UI library. Feel free to explore and utilize them as needed for your development workflow.
 
 ## Publishing
 

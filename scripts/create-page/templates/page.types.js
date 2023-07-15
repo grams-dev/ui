@@ -1,6 +1,6 @@
 module.exports = (pageName) => ({
   content: `export interface ${pageName}Props {
-    foo: string;
+    className: string;
 }
 `,
   extension: `.types.ts`

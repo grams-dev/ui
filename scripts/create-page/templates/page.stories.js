@@ -3,11 +3,10 @@ module.exports = (pageName) => ({
 import ${pageName} from "./${pageName}";
 
 export default {
-    title: "${pageName}"
+    title: "Pages/${pageName}"
 };
 
-export const WithBar = () => <${pageName} foo="bar" />;
-
+export const WithoutCSS = () => <${pageName} className="" />;
 `,
   extension: `.stories.tsx`
 });

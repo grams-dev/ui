@@ -29,6 +29,7 @@ generatedTemplates.forEach((template) => {
     template.content
   );
 });
+
 fs.writeFileSync(`${pageDirectory}/index.ts`, `export { default } from "./${pageName}";
 `);
 

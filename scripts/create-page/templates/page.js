@@ -6,11 +6,15 @@ module.exports = (pageName) => ({
 
 import { NotificationContainer } from 'react-notifications';
 
+import { ${pageName}Props } from "./${pageName}.types";
+
 import "./${pageName}.css";
 
-const ${pageName}: React.FC = () => {
+const ${pageName}: React.FC<${pageName}Props> = ({ className }) => {
   return (
-    <div className='page'>
+    <div 
+      className={ className || 'page' }
+    >
       <NotificationContainer/>
     </div>
   );

@@ -1,12 +1,11 @@
-module.exports = (pageName) => ({
-  content: `import React from "react";
+import React from "react";
 import { render } from "@testing-library/react";
 
-import ${pageName} from "./${pageName}";
-import { ${pageName}Props } from "./${pageName}.types";
+import Splash from "./Splash";
+import { SplashProps } from "./Splash.types";
 
 describe("Test Component", () => {
-  let props: ${pageName}Props;
+  let props: SplashProps;
 
   beforeEach(() => {
     props = {
@@ -14,17 +13,14 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<${pageName} {...props} />);
+  const renderComponent = () => render(<Splash {...props} />);
 
   it("should render className text correctly", () => {
     props.className = "bar";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("${pageName}");
+    const component = getByTestId("Splash");
 
     expect(component).toHaveTextContent("bar");
   });
-});
-`,
-  extension: `.test.tsx`
 });

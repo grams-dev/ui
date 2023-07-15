@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
-    "generate": "node ./scripts/create-component",
+    "generate:component": "node ./scripts/create-component",
+    "generate:page": "node ./scripts/create-page",
     "prepublishOnly": "npm run build"
   },
   "repository": {

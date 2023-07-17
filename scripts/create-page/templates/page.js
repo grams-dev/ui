@@ -21,7 +21,6 @@ const ${pageName}: React.FC<${pageName}Props> = ({ className }) => {
 };
 
 export default ${pageName};
-
 `,
   extension: `.tsx`
 });

@@ -30,4 +30,3 @@ const Splash: React.FC<SplashProps> = ({ className, onLoad }) => {
 };
 
 export default Splash;
-

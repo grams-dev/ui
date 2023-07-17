@@ -34,7 +34,8 @@
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
     "react-notifications": "^1.7.4",
-    "semantic-ui-react": ">=2.1.4"
+    "semantic-ui-react": ">=2.1.4",
+    "@grams.dev/assets": "^0.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -79,8 +80,5 @@
     "storybook": "^7.0.27",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "@grams.dev/assets": "^0.0.3"
   }
 }

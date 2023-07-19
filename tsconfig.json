@@ -10,14 +10,19 @@
     "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "jest"
+    ]
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "**/*.test.tsx"
+  ],
   "exclude": [
     "node_modules",
     "build",
     "storybook-static",
-    "src/**/*.stories.tsx",
-    "src/**/*.test.tsx"
+    "src/**/*.stories.tsx"
   ]
 }

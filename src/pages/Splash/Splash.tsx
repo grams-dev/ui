@@ -5,8 +5,6 @@ import React, {
 
 import { Grid, Image } from 'semantic-ui-react';
 
-import { NotificationContainer } from 'react-notifications';
-
 import { SplashProps } from "./Splash.types";
 
 import "./Splash.css";
@@ -24,7 +22,6 @@ const Splash: React.FC<SplashProps> = ({ className, onLoad }) => {
     >
       <Grid.Column>
       </Grid.Column>
-      <NotificationContainer />
     </Grid>
   );
 };

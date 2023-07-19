@@ -32,6 +32,18 @@ yarn add @grams.dev/ui
 
 ## Usage
 
+### Stylesheet
+
+First, you'll need to import the `index.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:
+
+```tsx
+import '@grams.dev/ui/build/index.css';
+
+...
+```
+
+### Components
+
 Once installed, you can import and use the UI components in your Grams dApp. Here's an example of how to use a Button component:
 
 ```jsx
@@ -50,6 +62,22 @@ const MyComponent = () => {
 You can customize the appearance and behavior of the UI components using the provided props and CSS styles.
 
 For more detailed information and examples, refer to the [Grams UI Documentation](https://github.com/grams-dev/grams-ui).
+
+### Using Component Library CSS Variables
+
+Above we imported `index.css` into the root of our project. `index.css` contains a number of CSS variables that can be used across the project that consumes our component library.
+
+In your CSS, you can use the variables defined in `variables.css` like:
+
+```CSS
+.example-container {
+    color: var(--grams-white);
+    background-color: var(--grams-black);
+}
+```
+
+See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties for more information about CSS Variables.
+
 
 ## Documentation
 
@@ -165,55 +193,6 @@ OR
 npm i --save github:grams-dev/ui#branch-name
 ```
 
-## Usage
-
-Let's say you created a public NPM package called `harvey-component-library` with the `TestComponent` component created in this repository.
-
-### Stylesheet
-
-First, you'll need to import the `index.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:
-
-```tsx
-import 'harvey-component-library/build/index.css';
-
-...
-```
-
-### Components
-
-Usage of components (after the library installed as a dependency into another project) will look like:
-
-```TSX
-import React from "react";
-import { TestComponent } from "@grams.dev/ui";
-
-const App = () => (
-  <div className="app-container">
-    <h1>Hello I'm consuming the component library</h1>
-    <TestComponent heading={'Some heading'} content={<div>Some content</div>} />
-  </div>
-);
-
-export default App;
-```
-
-[Check out this Code Sandbox for a live example.](https://codesandbox.io/s/harvey-component-library-example-y2b60?file=/src/App.js)
-
-### Using Component Library CSS Variables
-
-Above we imported `index.css` into the root of our project. `index.css` contains a number of CSS variables that can be used across the project that consumes our component library.
-
-In your CSS, you can use the variables defined in `variables.css` like:
-
-```CSS
-.example-container {
-    color: var(--harvey-white);
-    background-color: var(--harvey-black);
-}
-```
-
-See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties for more information about CSS Variables.
-
 ## Additional Help
 
 ### Dark Mode
@@ -242,10 +221,6 @@ postcss({
 })
 ```
 
-#### Styled Components
-
-If you want to use [`styled-components`](https://styled-components.com/), the changes required are a bit more involved. As such, I've created a branch where I've got `styled-components` working in this component library, [check it out here](https://github.com/HarveyD/react-component-library/tree/styled-components).
-
 ### Component Code Splitting
 
 Code splitting of your components is not supported by default.
@@ -261,65 +236,5 @@ This can reduce the bundle size for projects using older (CJS) module formats.
 You can check out [this branch](https://github.com/HarveyD/react-component-library/tree/code-splitting) or [this commit](https://github.com/HarveyD/react-component-library/commit/94631be5a871f3b39dbc3e9bd3e75a8ae5b3b759) to see what changes are neccesary to implement it.
 
 Please note, there's an issue with code splitting and using `rollup-plugin-postcss`. I recommend using `rollup-plugin-sass` instead alongside code splitting.
-
-### Supporting Image Imports
-
-Add the following library to your component library [@rollup/plugin-image](https://github.com/rollup/plugins/tree/master/packages/image):
-
-```
-npm i -D @rollup/plugin-image
-```
-
-Then add it to `rollup-config.js`:
-
-```
-...
-plugins:[
-  ...,
-  image(),
-  ...
-]
-...
-```
-
-You can then import and render images in your components like:
-
-```tsx
-import logo from "./rollup.png";
-
-export const ImageComponent = () => (
-  <div>
-    <img src={logo} />
-  </div>
-);
-```
-
-### Supporting JSON Imports
-
-Add the following library to your component library [@rollup/plugin-json](https://github.com/rollup/plugins/tree/master/packages/json):
-
-```
-npm i -D @rollup/plugin-json
-```
-
-Then add it to `rollup-config.js`:
-
-```
-...
-plugins:[
-  ...,
-  json(),
-  ...
-]
-...
-```
-
-You can then import and use JSON as ES6 Modules:
-
-```tsx
-import data from "./some-data.json";
-
-export const JsonDataComponent = () => <div>{data.description}</div>;
-```
 
 Checkout the [official Rollup plugin list](https://github.com/rollup/plugins) for additional helpful plugins.

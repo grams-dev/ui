@@ -1,3 +1,3 @@
 export interface UnlockProps {
-    className: string;
+    className?: string;
 }

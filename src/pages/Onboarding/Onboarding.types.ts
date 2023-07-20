@@ -1,3 +1,3 @@
 export interface OnboardingProps {
-    className: string;
+    className?: string;
 }

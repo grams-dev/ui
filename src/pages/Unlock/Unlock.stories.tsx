@@ -21,3 +21,9 @@ export const Primary: Story = {
       className: 'page',
   },
 };
+
+export const Mobile: Story = {
+  args: {
+      className: 'mobile',
+  },
+};

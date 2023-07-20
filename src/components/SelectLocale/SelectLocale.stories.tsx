@@ -3,7 +3,7 @@ import React from "react";
 import SelectLocale from "./SelectLocale";
 
 export default {
-    title: "SelectLocale"
+    title: "Components/SelectLocale"
 };
 
 export const WithBar = () => <SelectLocale foo="bar" />;

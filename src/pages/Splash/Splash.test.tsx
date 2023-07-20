@@ -9,14 +9,14 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-      className: "bar"
+      className: "page"
     };
   });
 
   const renderComponent = () => render(<Splash {...props} />);
 
-  it("should render className text correctly", () => {
-    props.className = "bar";
+  it("should render className correctly", () => {
+    props.className = "page";
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("Splash");

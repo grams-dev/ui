@@ -3,7 +3,7 @@ import React from "react";
 import SelectProfile from "./SelectProfile";
 
 export default {
-    title: "SelectProfile"
+    title: "Components/SelectProfile"
 };
 
 export const WithBar = () => <SelectProfile foo="bar" />;

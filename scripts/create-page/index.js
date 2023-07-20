@@ -33,6 +33,4 @@ generatedTemplates.forEach((template) => {
 fs.writeFileSync(`${pageDirectory}/index.ts`, `export { default } from "./${pageName}";
 `);
 
-console.log(
-  "Successfully created page under: " + pageDirectory.green
-);
+console.log("Successfully created page under: " + pageDirectory.green);

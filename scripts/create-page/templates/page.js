@@ -4,8 +4,6 @@ module.exports = (pageName) => ({
   useEffect
 } from "react";
 
-import { NotificationContainer } from 'react-notifications';
-
 import { ${pageName}Props } from "./${pageName}.types";
 
 import "./${pageName}.css";
@@ -13,9 +11,10 @@ import "./${pageName}.css";
 const ${pageName}: React.FC<${pageName}Props> = ({ className }) => {
   return (
     <div 
-      className={ className || 'page' }
+      data-testid='${pageName}'
+      className={ className || 'page-${pageName}' }
     >
-      <NotificationContainer/>
+      // Go nuts :)
     </div>
   );
 };

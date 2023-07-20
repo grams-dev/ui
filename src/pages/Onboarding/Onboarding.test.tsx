@@ -1,12 +1,11 @@
-module.exports = (pageName) => ({
-  content: `import React from "react";
+import React from "react";
 import { render } from "@testing-library/react";
 
-import ${pageName} from "./${pageName}";
-import { ${pageName}Props } from "./${pageName}.types";
+import Onboarding from "./Onboarding";
+import { OnboardingProps } from "./Onboarding.types";
 
 describe("Test Component", () => {
-  let props: ${pageName}Props;
+  let props: OnboardingProps;
 
   beforeEach(() => {
     props = {
@@ -14,18 +13,15 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<${pageName} {...props} />);
+  const renderComponent = () => render(<Onboarding {...props} />);
 
   it("should render className correctly", () => {
     props.className = "page";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("${pageName}");
+    const component = getByTestId("Onboarding");
 
     // Change to the actual assertion you need
     expect(true).toBeTruthy();
   });
-});
-`,
-  extension: `.test.tsx`
 });

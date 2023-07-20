@@ -5,6 +5,8 @@ import React, {
 
 import { Grid, Image } from 'semantic-ui-react';
 
+import { motion } from "framer-motion";
+
 import { SplashProps } from "./Splash.types";
 
 import "./Splash.css";
@@ -16,13 +18,16 @@ const Splash: React.FC<SplashProps> = ({ className, onLoad }) => {
   });
 
   return (
-    <Grid
-      verticalAlign="middle"
-      className={className || 'page'}
-    >
-      <Grid.Column>
-      </Grid.Column>
-    </Grid>
+    <div data-testid="Splash">
+      <Grid
+        verticalAlign="middle"
+        className={className || 'page'}
+      >
+        <Grid.Column>
+          <Image size="small" src="https://assets.grams.dev/logo/logo.png" />
+        </Grid.Column>
+      </Grid>
+    </div>
   );
 };
 

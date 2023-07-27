@@ -1,17 +1,17 @@
 :root {
-  /* Add your CSS variables here */
-  --background: #fff;
+  /* Add CSS variables here */
+  --background: #F6F7FB;
   --font-color: #494949;
 
-  --grams-black: #131111;
-  --grams-white: #e0e0e0;
-  --grams-red: #ff2323;
-  --grams-green: #005f20;
-  --grams-blue: #070bce;
+  --grams-primary: #4070F4;
+  --grams-secondary: #15CD72;
+  --grams-background: #F6F7FB;
+  --grams-accent-1: #333333;
+  --grams-accent-2: #9FA5B1;
 
   --heading-font-size: 40px;
 
-  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

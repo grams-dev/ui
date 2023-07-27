@@ -12,6 +12,7 @@
   "types": "build/index.d.ts",
   "description": "A semantic and intuitive user interface for seamless interaction with Grams ecosystem",
   "scripts": {
+    "setup": "npm install",
     "build": "rollup -c",
     "test": "jest",
     "test:watch": "jest --watch",

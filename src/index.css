@@ -3,11 +3,11 @@
   --background: #F6F7FB;
   --font-color: #494949;
 
-  --grams-primary: #4070F4;
-  --grams-secondary: #15CD72;
+  --grams-primary: #223651;
+  --grams-secondary: #CBB26A;
   --grams-background: #F6F7FB;
-  --grams-accent-1: #333333;
-  --grams-accent-2: #9FA5B1;
+  --grams-accent-1: #314E75;
+  --grams-accent-2: #131E2D;
 
   --heading-font-size: 40px;
 
@@ -18,5 +18,7 @@
   :root {
     --background: #3c3c3c;
     --font-color: #fafafa;
+    --grams-accent-1: #D8C690;
+    --grams-accent-2: #BE9E44;
   }
 }

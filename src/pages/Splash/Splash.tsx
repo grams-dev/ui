@@ -1,32 +1,26 @@
 import React, {
-  useState,
   useEffect
 } from "react";
 
-import { Grid, Image } from 'semantic-ui-react';
-
-import { motion } from "framer-motion";
+import { Image } from 'semantic-ui-react';
 
 import { SplashProps } from "./Splash.types";
 
 import "./Splash.css";
 
-const Splash: React.FC<SplashProps> = ({ className, onLoad }) => {
+const Splash: React.FC<SplashProps> = ({ className, image, size, onLoad }) => {
 
   useEffect(() => {
     onLoad?.();
   });
 
   return (
-    <div data-testid="Splash">
-      <Grid
-        verticalAlign="middle"
-        className={className || 'page'}
-      >
-        <Grid.Column>
-          <Image size="small" src="https://assets.grams.dev/logo/logo.png" />
-        </Grid.Column>
-      </Grid>
+    <div data-testid="Splash" className={className || 'page'}>
+      <Image 
+        className="loader"
+        size={size || "massive"}
+        src={image || "https://assets.grams.dev/logo/loader.logo.gif"}
+      />
     </div>
   );
 };

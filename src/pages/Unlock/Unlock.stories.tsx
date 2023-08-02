@@ -14,5 +14,8 @@ type Story = StoryObj<typeof Unlock>;
 export const Primary: Story = {
 };
 
-export const Mobile: Story = {
+export const Basic: Story = {
+  args: {
+      basic: true,
+  },
 };

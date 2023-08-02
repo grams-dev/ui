@@ -1,11 +1,11 @@
 import React, {
   useState
 } from "react";
+import { useTranslation } from 'react-i18next';
 
 import {
   Button,
   Form,
-  Grid,
   Header,
   Image,
   Segment
@@ -15,15 +15,18 @@ import { UnlockProps } from "./Unlock.types";
 
 import "./Unlock.css";
 
-const Unlock: React.FC<UnlockProps> = ({ name, image, method, rule, onUnlock }) => {
+const Unlock: React.FC<UnlockProps> = ({ basic, name, image, method, rule, onUnlock }) => {
+
+  const { t, i18n } = useTranslation();
 
   const PIN_RULE = /^[0-9]{1,6}$/
   const PASSWORD_RULE = /^[0-9]{1,6}$/
 
-  const [pname, setPname] = useState(name || "Unlock Profile");
+  const [pname, setPname] = useState(name || t("common:pages.unlock.title"));
   const [credential, setCredential] = useState("");
   const cmethod = method || "pin";
   const crule = rule || cmethod === "password" ? PASSWORD_RULE : PIN_RULE;
+  const placeholder = cmethod === "password" ? t("common:pages.unlock.password") : t("common:pages.unlock.pin");
 
   const isValid = () => (
     credential &&
@@ -41,7 +44,7 @@ const Unlock: React.FC<UnlockProps> = ({ name, image, method, rule, onUnlock }) 
     >
       <div className='unlock-form'>
         <Form size="large">
-          <Segment basic>
+          <Segment basic={basic}>
             <Image
               size='tiny'
               avatar
@@ -52,7 +55,7 @@ const Unlock: React.FC<UnlockProps> = ({ name, image, method, rule, onUnlock }) 
               fluid
               icon="lock open"
               iconPosition="left"
-              placeholder={cmethod}
+              placeholder={placeholder}
               type='password'
               onChange={(event, data) => { setCredential(data.value) }}
             />
@@ -63,7 +66,7 @@ const Unlock: React.FC<UnlockProps> = ({ name, image, method, rule, onUnlock }) 
               fluid
               size="large"
             >
-              Unlock
+              {t("common:pages.unlock.confirm")}
             </Button>
           </Segment>
         </Form>

@@ -82,7 +82,14 @@
     "rollup-plugin-typescript2": "^0.35.0",
     "semantic-ui-css": "^2.5.0",
     "storybook": "^7.1.1",
+    "storybook-react-i18next": "^2.0.8",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@grams-dev/i18n": "^0.0.3",
+    "i18next": "^23.4.1",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "react-i18next": "^13.0.3"
   }
 }

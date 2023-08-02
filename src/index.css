@@ -1,3 +1,5 @@
+@import "font/stylesheet.css";
+
 :root {
   /* Add CSS variables here */
   --background: #F6F7FB;
@@ -11,7 +13,7 @@
 
   --heading-font-size: 40px;
 
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "hubballiregular" !important;/*, "Roboto", Helvetica, Arial, sans-serif;*/
 }
 
 @media (prefers-color-scheme: dark) {

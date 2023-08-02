@@ -39,6 +39,10 @@ export default {
           src: "src/index.css",
           dest: "dist",
           rename: "index.css"
+        },
+        {
+          src: "src/font",
+          dest: "dist"
         }
       ]
     })

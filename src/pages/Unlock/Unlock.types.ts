@@ -1,3 +1,7 @@
 export interface UnlockProps {
-    className?: string;
+    name?: string;
+    image?: string;
+    method?: 'pin' | 'password';
+    rule?: RegExp;
+    onUnlock?: (credential: string) => void;
 }

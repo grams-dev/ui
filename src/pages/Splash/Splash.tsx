@@ -15,10 +15,13 @@ const Splash: React.FC<SplashProps> = ({ className, image, size, onLoad }) => {
   });
 
   return (
-    <div data-testid="Splash" className={className || 'page'}>
+    <div
+      data-testid="Splash"
+      className={className || 'page'}
+    >
       <Image 
         className="loader"
-        size={size || "massive"}
+        size={size || "large"}
         src={image || "https://assets.grams.dev/logo/loader.logo.gif"}
       />
     </div>

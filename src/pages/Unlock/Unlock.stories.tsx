@@ -4,12 +4,7 @@ import Unlock from "./Unlock";
 
 const meta: Meta<typeof Unlock> = {
   title: "Pages/Unlock",
-  component: Unlock,
-  argTypes: {
-      className: {
-          control: "text"
-      }
-  },
+  component: Unlock
 };
 
 export default meta;
@@ -17,13 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Unlock>;
 
 export const Primary: Story = {
-  args: {
-      className: 'page',
-  },
 };
 
 export const Mobile: Story = {
-  args: {
-      className: 'mobile',
-  },
 };

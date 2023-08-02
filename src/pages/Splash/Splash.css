@@ -1,11 +1,11 @@
-.page {
+.splash-page {
   height: 100%;
   width: 100%;
-  background-color: var(--grams-primary);
+  background: var(--grams-background);
   align-items: center;
   text-align: center;
 }
 
-.loader {
+.splash-loader {
   margin: auto;
 }

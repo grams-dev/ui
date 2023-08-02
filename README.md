@@ -1,10 +1,10 @@
-# @grams.dev/ui
+# @grams-dev/ui
 
-[![npm version](https://img.shields.io/npm/v/@grams.dev/ui)](https://www.npmjs.com/package/@grams.dev/ui)
-[![npm downloads](https://img.shields.io/npm/dm/@grams.dev/ui)](https://www.npmjs.com/package/@grams.dev/ui)
+[![npm version](https://img.shields.io/npm/v/@grams-dev/ui)](https://www.npmjs.com/package/@grams-dev/ui)
+[![npm downloads](https://img.shields.io/npm/dm/@grams-dev/ui)](https://www.npmjs.com/package/@grams-dev/ui)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/grams-dev/ui/blob/main/LICENSE)
 
-The `@grams.dev/ui` package is a collection of UI components designed for use with the Grams ecosystem. It provides developers with a set of reusable and customizable UI elements to create user-friendly decentralized applications (dApps).
+The `@grams-dev/ui` package is a collection of UI components designed for use with the Grams ecosystem. It provides developers with a set of reusable and customizable UI elements to create user-friendly decentralized applications (dApps).
 
 ## Features
 
@@ -16,18 +16,24 @@ The `@grams.dev/ui` package is a collection of UI components designed for use wi
 
 ## Installation
 
-You can install the `@grams.dev/ui` package via your preferred package manager.
+You can install the `@grams-dev/ui` package via your preferred package manager.
+
+### [`grams-contributors`](https://github.com/grams-dev/contributors) (Recommended)
+
+```shell
+grams-contributors setup -r ui
+```
 
 ### npm
 
 ```shell
-npm install @grams.dev/ui
+npm install @grams-dev/ui
 ```
 
 ### Yarn
 
 ```shell
-yarn add @grams.dev/ui
+yarn add @grams-dev/ui
 ```
 
 ## Usage
@@ -37,7 +43,7 @@ yarn add @grams.dev/ui
 First, you'll need to import the `index.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:
 
 ```tsx
-import '@grams.dev/ui/build/index.css';
+import '@grams-dev/ui/dist/index.css';
 
 ...
 ```
@@ -48,13 +54,11 @@ Once installed, you can import and use the UI components in your Grams dApp. Her
 
 ```jsx
 import React from 'react';
-import { Button } from '@grams.dev/ui';
+import { Splash } from '@grams-dev/ui';
 
 const MyComponent = () => {
   return (
-    <Button onClick={() => console.log('Button clicked')}>
-      Click Me
-    </Button>
+    <Splash onLoad={() => console.log('Component loaded')} />
   );
 };
 ```
@@ -71,8 +75,8 @@ In your CSS, you can use the variables defined in `variables.css` like:
 
 ```CSS
 .example-container {
-    color: var(--grams-white);
-    background-color: var(--grams-black);
+    color: var(--grams-primary);
+    background-color: var(--grams-accent-1);
 }
 ```
 
@@ -81,17 +85,17 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_propertie
 
 ## Documentation
 
-Comprehensive documentation for @grams.dev/ui is available at [https://storybook.grams.dev](https://storybook.grams.dev). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
+Comprehensive documentation for @grams-dev/ui is available at [https://storybook.grams-dev](https://storybook.grams-dev). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
 
 ## Contributing
 
-Contributions to `@grams.dev/ui` are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/grams-dev/ui).
+Contributions to `@grams-dev/ui` are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/grams-dev/ui).
 
 When contributing, please adhere to the existing code style and guidelines.
 
 ## License
 
-The `@grams.dev/ui` package is open source and distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Your contributions to the project are appreciated and will be licensed accordingly.
+The `@grams-dev/ui` package is open source and distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Your contributions to the project are appreciated and will be licensed accordingly.
 
 ## Development
 
@@ -228,7 +232,7 @@ Code splitting of your components is not supported by default.
 [Read this section of my blog post](https://blog.harveydelaney.com/creating-your-own-react-component-library/#introducing-code-splitting-optional-) to find out how and why you would enable code splitting of your components. In summary, code splitting enables users to import components in isolation like:
 
 ```
-import TestComponent from 'harvey-component-library/build/TestComponent';
+import TestComponent from '@grams-dev/ui/dist/TestComponent';
 ```
 
 This can reduce the bundle size for projects using older (CJS) module formats.

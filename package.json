@@ -1,19 +1,19 @@
 {
   "name": "@grams-dev/ui",
-  "version": "0.0.1",
-  "author": "Grams Foundation",
+  "version": "0.0.2",
+  "author": "grams-dev",
   "homepage": "https://github.com/grams-dev/ui#readme",
   "license": "Apache-2.0",
-  "main": "build/index.js",
-  "module": "build/index.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
-    "build"
+    "dist"
   ],
   "types": "build/index.d.ts",
   "description": "A semantic and intuitive user interface for seamless interaction with Grams ecosystem",
   "scripts": {
     "setup": "npm install",
-    "build": "rollup -c",
+    "build": "rimraf dist && rollup -c",
     "start": "npm run storybook",
     "test": "jest",
     "test:watch": "jest --watch",

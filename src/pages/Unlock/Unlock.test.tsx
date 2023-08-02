@@ -9,14 +9,12 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-      className: "page"
     };
   });
 
   const renderComponent = () => render(<Unlock {...props} />);
 
-  it("should render className correctly", () => {
-    props.className = "page";
+  it("should render correctly", () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("Unlock");

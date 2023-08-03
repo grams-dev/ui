@@ -27,6 +27,7 @@ const Unlock: React.FC<UnlockProps> = ({ basic, name, image, method, rule, onUnl
   const cmethod = method || "pin";
   const crule = rule || cmethod === "password" ? PASSWORD_RULE : PIN_RULE;
   const placeholder = cmethod === "password" ? t("common:pages.unlock.password") : t("common:pages.unlock.pin");
+  const direction = i18n.dir() === 'ltr' ? 'left' : undefined;
 
   const isValid = () => (
     credential &&
@@ -54,7 +55,7 @@ const Unlock: React.FC<UnlockProps> = ({ basic, name, image, method, rule, onUnl
             <Form.Input
               fluid
               icon="lock open"
-              iconPosition="left"
+              iconPosition={direction}
               placeholder={placeholder}
               type='password'
               onChange={(event, data) => { setCredential(data.value) }}

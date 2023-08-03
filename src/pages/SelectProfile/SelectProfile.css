@@ -1,5 +1,4 @@
-module.exports = (pageName) => ({
-  content: `.${pageName.toLowerCase()}-page {
+.selectprofile-page {
   display: grid;
   place-items: center;
   height: 100%;
@@ -9,7 +8,7 @@ module.exports = (pageName) => ({
   text-align: center;
 }
 
-.${pageName.toLowerCase()}-content {
+.selectprofile-content {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -18,6 +17,3 @@ module.exports = (pageName) => ({
   min-width: 320px;
   max-width: 450px;
 }
-`,
-  extension: `.css`
-});

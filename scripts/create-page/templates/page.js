@@ -3,18 +3,24 @@ module.exports = (pageName) => ({
   useState,
   useEffect
 } from "react";
+import { useTranslation } from 'react-i18next';
 
 import { ${pageName}Props } from "./${pageName}.types";
 
 import "./${pageName}.css";
 
 const ${pageName}: React.FC<${pageName}Props> = ({ className }) => {
+
+  const { t, i18n } = useTranslation();
+  
   return (
     <div 
       data-testid='${pageName}'
-      className={ className || 'page-${pageName}' }
+      className={ className || '${pageName.toLowerCase()}-page' }
     >
-      // Go nuts :)
+      <div className='${pageName.toLowerCase()}-content'>
+        // Go nuts :)
+      </div>
     </div>
   );
 };

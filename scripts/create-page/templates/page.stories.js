@@ -5,12 +5,7 @@ import ${pageName} from "./${pageName}";
 
 const meta: Meta<typeof ${pageName}> = {
   title: "Pages/${pageName}",
-  component: ${pageName},
-  argTypes: {
-      className: {
-          control: "text"
-      }
-  },
+  component: ${pageName}
 };
 
 export default meta;
@@ -18,9 +13,6 @@ export default meta;
 type Story = StoryObj<typeof ${pageName}>;
 
 export const Primary: Story = {
-  args: {
-      className: 'page',
-  },
 };
 `,
   extension: `.stories.tsx`

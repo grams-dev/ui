@@ -38,6 +38,14 @@ yarn add @grams-dev/ui
 
 ## Usage
 
+### Import the `i18n` Object
+
+In your `index.html`, import the `i18n` object from `@grams-dev/i18n` to access the translation strings
+
+```jsx
+import '@grams-dev/i18n';
+```
+
 ### Stylesheet
 
 First, you'll need to import the `index.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:

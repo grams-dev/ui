@@ -33,6 +33,7 @@
     "url": "https://github.com/grams-dev/ui/issues"
   },
   "peerDependencies": {
+    "@grams-dev/i18n": "^0.0.5",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
     "semantic-ui-react": ">=2.1.4",
@@ -88,8 +89,5 @@
     "storybook-react-i18next": "^2.0.8",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "@grams-dev/i18n": "^0.0.5"
   }
 }

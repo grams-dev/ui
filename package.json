@@ -87,7 +87,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@grams-dev/i18n": "^0.0.3",
+    "@grams-dev/i18n": "^0.0.4",
     "i18next": "^23.4.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "react-i18next": "^13.0.3"

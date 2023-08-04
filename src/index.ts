@@ -1,3 +1,15 @@
+/**
+ * Components
+ */
+import Profile from "./components/Profile/Profile";
+
+export {
+    Profile
+}
+
+/**
+ * Pages
+ */
 import Onboarding from "./pages/Onboarding";
 import SelectLocale from "./pages/SelectLocale";
 import SelectProfile from "./pages/SelectProfile";

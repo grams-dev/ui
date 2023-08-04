@@ -25,7 +25,7 @@ const Profile: React.FC<ProfileProps> = ({ id, name, developer, image, onSelect 
         <Image
             size='tiny'
             avatar
-            src={ image || "https://assets.grams.dev/logo/social.logo.png" }
+            src={ image || "https://assets.grams.dev/img/SelectProfile/default.png" }
         />
         <List.Header>{name}</List.Header>
     </List.Item>

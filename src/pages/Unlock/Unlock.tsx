@@ -49,7 +49,7 @@ const Unlock: React.FC<UnlockProps> = ({ basic, name, image, method, rule, onUnl
             <Image
               size='tiny'
               avatar
-              src={image || "https://assets.grams.dev/logo/social.logo.png"}
+              src={image || "https://assets.grams.dev/img/Unlock/default.png"}
             />
             <Header as="h3" className='mt-0'>{pname}</Header>
             <Form.Input

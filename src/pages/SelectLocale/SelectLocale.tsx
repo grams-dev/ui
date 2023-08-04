@@ -41,7 +41,7 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({ basic, className, onSelect,
       <>
         {option && <Flag name={option.flag} />}
         {!option && <Icon name='world' />}
-        {option?.text || "Select language"}
+        {option?.text || t('common:pages.selectLocale.placeholder')}
       </>
     );
   }
@@ -72,7 +72,7 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({ basic, className, onSelect,
                 onClick={() => onConfirm?.(selected)}
                 size="large"
               >
-                Select
+                {t('common:pages.selectLocale.confirm')}
               </Button>
             </List.Item>
           </List>

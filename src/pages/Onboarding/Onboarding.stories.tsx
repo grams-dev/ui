@@ -17,7 +17,10 @@ export default meta;
 type Story = StoryObj<typeof Onboarding>;
 
 export const Primary: Story = {
+};
+
+export const Basic: Story = {
   args: {
-      className: 'page',
-  },
+    basic: true
+  }
 };

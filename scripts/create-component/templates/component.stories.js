@@ -1,15 +1,19 @@
 module.exports = (componentName) => ({
-  content: `// Generated with util/create-component.js
-import React from "react";
+  content: `import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import ${componentName} from "./${componentName}";
 
-export default {
-    title: "${componentName}"
+const meta: Meta<typeof ${componentName}> = {
+  title: "Components/${componentName}",
+  component: ${componentName}
 };
 
-export const WithBar = () => <${componentName} foo="bar" />;
+export default meta;
 
-export const WithBaz = () => <${componentName} foo="baz" />;
+type Story = StoryObj<typeof ${componentName}>;
+
+export const Primary: Story = {
+};
 `,
   extension: `.stories.tsx`
 });

@@ -1,23 +1,21 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Profile from "./Profile";
-import { ProfileProps } from "./Profile.types";
+import NewProfile from "./NewProfile";
+import { NewProfileProps } from "./NewProfile.types";
 
 describe("Test Component", () => {
-  let props: ProfileProps;
+  let props: NewProfileProps;
 
   beforeEach(() => {
-    props = {
-    };
   });
 
-  const renderComponent = () => render(<Profile {...props} />);
+  const renderComponent = () => render(<NewProfile {...props} />);
 
   it("should render correctly", () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("Profile");
+    const component = getByTestId("NewProfile");
 
     expect(true).toBeTruthy();
   });

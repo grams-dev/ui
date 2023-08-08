@@ -30,6 +30,9 @@ generatedTemplates.forEach((template) => {
   );
 });
 
+fs.writeFileSync(`${componentDirectory}/index.ts`, `export { default } from "./${componentName}";
+`);
+
 console.log(
-  "Successfully created component under: " + componentDirectory.green
+  "Successfully created component in: " + componentDirectory.green
 );

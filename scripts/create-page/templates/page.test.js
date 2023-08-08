@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import ${pageName} from "./${pageName}";
 import { ${pageName}Props } from "./${pageName}.types";
 
-describe("Test Component", () => {
+describe("Test Page", () => {
   let props: ${pageName}Props;
 
   beforeEach(() => {
@@ -14,13 +14,13 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<${pageName} {...props} />);
+  const renderPage = () => render(<${pageName} {...props} />);
 
   it("should render className correctly", () => {
     props.className = "page";
-    const { getByTestId } = renderComponent();
+    const { getByTestId } = renderPage();
 
-    const component = getByTestId("${pageName}");
+    const page = getByTestId("${pageName}");
 
     // Change to the actual assertion you need
     expect(true).toBeTruthy();

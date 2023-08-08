@@ -1,23 +1,21 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Profile from "./Profile";
-import { ProfileProps } from "./Profile.types";
+import SelectMethod from "./SelectMethod";
+import { SelectMethodProps } from "./SelectMethod.types";
 
 describe("Test Component", () => {
-  let props: ProfileProps;
+  let props: SelectMethodProps;
 
   beforeEach(() => {
-    props = {
-    };
   });
 
-  const renderComponent = () => render(<Profile {...props} />);
+  const renderComponent = () => render(<SelectMethod {...props} />);
 
   it("should render correctly", () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("Profile");
+    const component = getByTestId("SelectMethod");
 
     expect(true).toBeTruthy();
   });

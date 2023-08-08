@@ -18,16 +18,10 @@ The `@grams-dev/ui` package is a collection of UI components designed for use wi
 
 You can install the `@grams-dev/ui` package via your preferred package manager.
 
-### [`grams-contributors`](https://github.com/grams-dev/contributors) (Recommended)
-
-```shell
-grams-contributors setup -r ui
-```
-
 ### npm
 
 ```shell
-npm install @grams-dev/ui
+npm install --save @grams-dev/ui
 ```
 
 ### Yarn
@@ -99,7 +93,11 @@ Comprehensive documentation for @grams-dev/ui is available at [https://storybook
 
 Contributions to `@grams-dev/ui` are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/grams-dev/ui).
 
-When contributing, please adhere to the existing code style and guidelines.
+### [`gcx`](https://github.com/grams-dev/contributors) (Recommended)
+
+```shell
+gcx setup -r ui
+```
 
 ## License
 

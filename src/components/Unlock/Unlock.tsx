@@ -13,20 +13,27 @@ import {
 
 import { UnlockProps } from "./Unlock.types";
 
-import "./Unlock.css";
+const PIN_RULE = /^(\d{4}|\d{6})$/
+const PASSWORD_RULE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g
 
-const Unlock: React.FC<UnlockProps> = ({ basic, name, image, method, rule, onUnlock }) => {
+/**
+ * A component for unlocking a profile using either a password or a pin number. Default to pin mode.
+ */
+const Unlock: React.FC<UnlockProps> = ({
+  basic = false,
+  name,
+  image,
+  method = "pin",
+  rule,
+  onUnlock 
+}: UnlockProps) => {
 
   const { t, i18n } = useTranslation();
 
-  const PIN_RULE = /^[0-9]{1,6}$/
-  const PASSWORD_RULE = /^[0-9]{1,6}$/
-
   const [pname, setPname] = useState(name || t("common:pages.unlock.title"));
   const [credential, setCredential] = useState("");
-  const cmethod = method || "pin";
-  const crule = rule || cmethod === "password" ? PASSWORD_RULE : PIN_RULE;
-  const placeholder = cmethod === "password" ? t("common:pages.unlock.password") : t("common:pages.unlock.pin");
+  const crule = rule || method === "password" ? PASSWORD_RULE : PIN_RULE;
+  const placeholder = method === "password" ? t("common:pages.unlock.password") : t("common:pages.unlock.pin");
   const direction = i18n.dir() === 'ltr' ? 'left' : undefined;
 
   const isValid = () => (
@@ -39,40 +46,34 @@ const Unlock: React.FC<UnlockProps> = ({ basic, name, image, method, rule, onUnl
   }
 
   return (
-    <div
-      data-testid='Unlock'
-      className='unlock-page'
-    >
-      <div className='unlock-form'>
-        <Form size="large">
-          <Segment basic={basic}>
-            <Image
-              size='tiny'
-              avatar
-              src={image || "https://assets.grams.dev/img/Unlock/default.png"}
-            />
-            <Header as="h3" className='mt-0'>{pname}</Header>
-            <Form.Input
-              fluid
-              icon="lock open"
-              iconPosition={direction}
-              placeholder={placeholder}
-              type='password'
-              onChange={(event, data) => { setCredential(data.value) }}
-            />
-            <Button
-              primary
-              disabled={!isValid()}
-              onClick={onSubmit}
-              fluid
-              size="large"
-            >
-              {t("common:pages.unlock.confirm")}
-            </Button>
-          </Segment>
-        </Form>
-      </div>
-    </div>
+    <Segment basic={basic} textAlign="center">
+      <Form size="large">
+        <Image
+          alt='unlock profile image'
+          size='tiny'
+          avatar
+          src={image || "https://assets.grams.dev/img/Unlock/default.png"}
+        />
+        <Header as="h3" className='mt-0'>{pname}</Header>
+        <Form.Input
+          fluid
+          icon="lock open"
+          iconPosition={direction}
+          placeholder={placeholder}
+          type='password'
+          onChange={(event, data) => { setCredential(data.value) }}
+        />
+        <Button
+          primary
+          disabled={!isValid()}
+          onClick={onSubmit}
+          fluid
+          size="large"
+        >
+          {t("common:pages.unlock.confirm")}
+        </Button>
+      </Form>
+    </Segment>
   );
 };
 

@@ -6,11 +6,6 @@ const meta: Meta<typeof NewProfile> = {
   title: "Forms/NewProfile",
   component: NewProfile,
   tags: ['autodocs'],
-  argTypes: {
-    onCreate: {
-      control: { expanded: true }
-    }
-  }
 };
 
 export default meta;

@@ -21,7 +21,6 @@ const PASSWORD_RULE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.
 
 /**
  * A component for creating a new profile with optional advanced settings.
- * 
  */
 const NewProfile: React.FC<NewProfileProps> = ({
   basic = false,

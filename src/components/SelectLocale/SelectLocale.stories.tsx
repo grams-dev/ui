@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SelectLocale from "./SelectLocale";
 
 const meta: Meta<typeof SelectLocale> = {
-  title: "Pages/SelectLocale",
+  title: "Selection/SelectLocale",
   component: SelectLocale
 };
 

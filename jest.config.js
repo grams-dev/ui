@@ -5,7 +5,8 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js"],
   testPathIgnorePatterns: ["node_modules/"],
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
   },
   testMatch: ["**/*.test.(ts|tsx)"],
   moduleNameMapper: {

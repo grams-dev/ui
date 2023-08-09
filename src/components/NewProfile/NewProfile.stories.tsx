@@ -3,8 +3,14 @@ import type { Meta, StoryObj } from "@storybook/react";
 import NewProfile from "./NewProfile";
 
 const meta: Meta<typeof NewProfile> = {
-  title: "Profile/NewProfile",
-  component: NewProfile
+  title: "Forms/NewProfile",
+  component: NewProfile,
+  tags: ['autodocs'],
+  argTypes: {
+    onCreate: {
+      control: { expanded: true }
+    }
+  }
 };
 
 export default meta;

@@ -4,7 +4,7 @@ import SelectProfile from "./SelectProfile";
 import { ProfileProps } from "../../components/Profile/Profile.types";
 
 const meta: Meta<typeof SelectProfile> = {
-  title: "Pages/SelectProfile",
+  title: "Selection/SelectProfile",
   component: SelectProfile
 };
 

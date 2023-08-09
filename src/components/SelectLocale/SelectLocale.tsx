@@ -49,7 +49,7 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({ basic, className, onSelect,
   return (
     <div
       data-testid='SelectLocale'
-      className={className || 'selectlocale-page'}
+      className={className || 'page'}
     >
       <div className='selectlocale-content'>
         <Segment basic={basic}>

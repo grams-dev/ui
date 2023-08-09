@@ -3,8 +3,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Profile from "./Profile";
 
 const meta: Meta<typeof Profile> = {
-  title: "Profile/Profile",
-  component: Profile
+  title: "Elements/Profile",
+  component: Profile,
+  tags: ['autodocs'],
 };
 
 export default meta;

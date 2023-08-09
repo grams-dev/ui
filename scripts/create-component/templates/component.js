@@ -1,9 +1,9 @@
 module.exports = (componentName) => ({
-  content: `import React from "react";
+  content: `import React, {
+  useState
+} from "react";
 
 import { ${componentName}Props } from "./${componentName}.types";
-
-import "./${componentName}.css";
 
 const ${componentName}: React.FC<${componentName}Props> = ({ className }) => (
     <div

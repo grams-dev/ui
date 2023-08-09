@@ -10,7 +10,11 @@ import { ProfileProps } from "./Profile.types";
 
 import "./Profile.css";
 
-const Profile: React.FC<ProfileProps> = ({ id, name, developer, image, onSelect }) => (
+/**
+ * Displays a user's profile, including the image, name, and an optional developer label.
+ *
+ */
+const Profile: React.FC<ProfileProps> = ({ id, name, developer, image, onSelect }: ProfileProps) => (
     <List.Item
         data-testid="Profile"
         className="profile-component"

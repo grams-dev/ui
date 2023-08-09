@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Unlock from "./Unlock";
 
 const meta: Meta<typeof Unlock> = {
-  title: "Pages/Unlock",
+  title: "Forms/Unlock",
   component: Unlock
 };
 

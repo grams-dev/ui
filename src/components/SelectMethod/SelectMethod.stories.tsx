@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SelectMethod from "./SelectMethod";
 
 const meta: Meta<typeof SelectMethod> = {
-  title: "Onboarding/SelectMethod",
+  title: "Selection/SelectMethod",
   component: SelectMethod
 };
 

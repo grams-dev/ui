@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap');
+
+/** CSS Variables **/
+:root {
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
+
+  /** Background **/
+  --grams-background: #f4f5f862;
+  /* A soft, light background color */
+  --grams-background-rgb: 244, 245, 248;
+
+  /** primary **/
+  --grams-color-primary: #1a73e8;
+  /* A confident blue */
+  --grams-color-primary-rgb: 26, 115, 232;
+  --grams-color-primary-contrast: #ffffff;
+  --grams-color-primary-contrast-rgb: 255, 255, 255;
+  --grams-color-primary-shade: #155aae;
+  --grams-color-primary-tint: #4c8dff;
+
+  /** secondary **/
+  --grams-color-secondary: #fbbc05;
+  /* A complementary, friendly yellow */
+  --grams-color-secondary-rgb: 251, 188, 5;
+  --grams-color-secondary-contrast: #000000;
+  --grams-color-secondary-contrast-rgb: 0, 0, 0;
+  --grams-color-secondary-shade: #b89304;
+  --grams-color-secondary-tint: #fcd94c;
+
+  /** tertiary **/
+  --grams-color-tertiary: #e57373;
+  /* A gentle, approachable red */
+  --grams-color-tertiary-rgb: 229, 115, 115;
+  --grams-color-tertiary-contrast: #ffffff;
+  --grams-color-tertiary-contrast-rgb: 255, 255, 255;
+  --grams-color-tertiary-shade: #b05555;
+  --grams-color-tertiary-tint: #f59999;
+
+  /** success **/
+  --grams-color-success: #34a853;
+  /* A reassuring green */
+  --grams-color-success-rgb: 52, 168, 83;
+  --grams-color-success-contrast: #ffffff;
+  --grams-color-success-contrast-rgb: 255, 255, 255;
+  --grams-color-success-shade: #277c3d;
+  --grams-color-success-tint: #62c076;
+
+  /** warning **/
+  --grams-color-warning: #fbbc04;
+  /* A noticeable amber */
+  --grams-color-warning-rgb: 251, 188, 4;
+  --grams-color-warning-contrast: #000000;
+  --grams-color-warning-contrast-rgb: 0, 0, 0;
+  --grams-color-warning-shade: #b89303;
+  --grams-color-warning-tint: #fcd94c;
+
+  /** danger **/
+  --grams-color-danger: #ea4335;
+  /* An alerting red */
+  --grams-color-danger-rgb: 234, 67, 53;
+  --grams-color-danger-contrast: #ffffff;
+  --grams-color-danger-contrast-rgb: 255, 255, 255;
+  --grams-color-danger-shade: #b03128;
+  --grams-color-danger-tint: #f25e52;
+
+  /** dark **/
+  --grams-color-dark: #202124;
+  /* A versatile dark gray */
+  --grams-color-dark-rgb: 32, 33, 36;
+  --grams-color-dark-contrast: #ffffff;
+  --grams-color-dark-contrast-rgb: 255, 255, 255;
+  --grams-color-dark-shade: #1a1b1c;
+  --grams-color-dark-tint: #3a3b3e;
+
+  /** medium **/
+  --grams-color-medium: #70757a;
+  /* A neutral medium gray */
+  --grams-color-medium-rgb: 112, 117, 122;
+  --grams-color-medium-contrast: #ffffff;
+  --grams-color-medium-contrast-rgb: 255, 255, 255;
+  --grams-color-medium-shade: #565a5e;
+  --grams-color-medium-tint: #8a8d91;
+
+  /** light **/
+  --grams-color-light: #f1f3f4;
+  /* A clean, airy light gray */
+  --grams-color-light-rgb: 241, 243, 244;
+  --grams-color-light-contrast: #000000;
+  --grams-color-light-contrast-rgb: 0, 0, 0;
+  --grams-color-light-shade: #d1d3d4;
+  --grams-color-light-tint: #f8f9fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    /** Background **/
+    --grams-background: #121214;
+    /* A deep, dark background color */
+    --grams-background-rgb: 18, 18, 20;
+
+    /** primary **/
+    --grams-color-primary: #4c8dff;
+    /* Brighter blue for dark background */
+    --grams-color-primary-rgb: 76, 141, 255;
+    --grams-color-primary-contrast: #ffffff;
+    --grams-color-primary-contrast-rgb: 255, 255, 255;
+    --grams-color-primary-shade: #3576cc;
+    --grams-color-primary-tint: #80a3ff;
+
+    /** secondary **/
+    --grams-color-secondary: #fcd94c;
+    /* Brighter yellow for contrast */
+    --grams-color-secondary-rgb: 252, 217, 76;
+    --grams-color-secondary-contrast: #000000;
+    --grams-color-secondary-contrast-rgb: 0, 0, 0;
+    --grams-color-secondary-shade: #cda740;
+    --grams-color-secondary-tint: #fed670;
+
+    /** tertiary **/
+    --grams-color-tertiary: #f59999;
+    /* Softer red */
+    --grams-color-tertiary-rgb: 245, 153, 153;
+    --grams-color-tertiary-contrast: #ffffff;
+    --grams-color-tertiary-contrast-rgb: 255, 255, 255;
+    --grams-color-tertiary-shade: #b07676;
+    --grams-color-tertiary-tint: #f8b1b1;
+
+    /** success **/
+    --grams-color-success: #42d77d;
+    /* Vibrant green */
+    --grams-color-success-rgb: 66, 215, 125;
+    --grams-color-success-contrast: #ffffff;
+    --grams-color-success-contrast-rgb: 255, 255, 255;
+    --grams-color-success-shade: #2d9f69;
+    --grams-color-success-tint: #66e391;
+
+    /** warning **/
+    --grams-color-warning: #ffca22;
+    /* Attention-grabbing amber */
+    --grams-color-warning-rgb: 255, 202, 34;
+    --grams-color-warning-contrast: #000000;
+    --grams-color-warning-contrast-rgb: 0, 0, 0;
+    --grams-color-warning-shade: #c5a01b;
+    --grams-color-warning-tint: #ffda55;
+
+    /** danger **/
+    --grams-color-danger: #f25e52;
+    /* Striking red */
+    --grams-color-danger-rgb: 242, 94, 82;
+    --grams-color-danger-contrast: #ffffff;
+    --grams-color-danger-contrast-rgb: 255, 255, 255;
+    --grams-color-danger-shade: #b84741;
+    --grams-color-danger-tint: #f77c75;
+
+    /** dark **/
+    --grams-color-dark: #121214;
+    /* Subtle dark background */
+    --grams-color-dark-rgb: 18, 18, 20;
+    --grams-color-dark-contrast: #ffffff;
+    --grams-color-dark-contrast-rgb: 255, 255, 255;
+    --grams-color-dark-shade: #0e0e10;
+    --grams-color-dark-tint: #28282c;
+
+    /** medium **/
+    --grams-color-medium: #6b6c70;
+    /* Medium gray */
+    --grams-color-medium-rgb: 107, 108, 112;
+    --grams-color-medium-contrast: #ffffff;
+    --grams-color-medium-contrast-rgb: 255, 255, 255;
+    --grams-color-medium-shade: #545557;
+    --grams-color-medium-tint: #838487;
+
+    /** light **/
+    --grams-color-light: #2a2a2e;
+    /* Light gray for dark mode */
+    --grams-color-light-rgb: 42, 42, 46;
+    --grams-color-light-contrast: #ffffff;
+    --grams-color-light-contrast-rgb: 255, 255, 255;
+    --grams-color-light-shade: #212124;
+    --grams-color-light-tint: #3d3d41;
+  }
+}
+
+/** CSS Classes **/
+body {
+  background: var(--grams-background);
+  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif !important;
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+  background: var(--grams-background);
+
+  > .content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 320px;
+    max-width: 450px;
+  }
+}

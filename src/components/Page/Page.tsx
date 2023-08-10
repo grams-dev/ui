@@ -14,7 +14,8 @@ const Page: React.FC<PageProps> = ({
   centered, 
   className, 
   children, 
-  full, 
+  full,
+  verticalAlign = 'middle',
   wide 
 }) => {
 
@@ -27,7 +28,7 @@ const Page: React.FC<PageProps> = ({
       data-testid="Page"
       centered
       className="page"
-      verticalAlign="middle"
+      verticalAlign={verticalAlign}
     >
       <Grid.Column
         className={`${className} ${wide && 'wide'} ${full && 'full'}`}

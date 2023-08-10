@@ -34,7 +34,7 @@ yarn add @grams-dev/ui
 
 ### Import the `i18n` Object
 
-In your `index.html`, import the `i18n` object from `@grams-dev/i18n` to access the translation strings
+In your `index.(js|ts)`, import the `i18n` object from `@grams-dev/i18n` to access the translation strings
 
 ```jsx
 import '@grams-dev/i18n';
@@ -42,10 +42,10 @@ import '@grams-dev/i18n';
 
 ### Stylesheet
 
-First, you'll need to import the `index.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:
+Then, you'll need to import the `grams.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:
 
 ```tsx
-import '@grams-dev/ui/dist/index.css';
+import '@grams-dev/ui/dist/grams.css';
 
 ...
 ```
@@ -56,11 +56,11 @@ Once installed, you can import and use the UI components in your Grams dApp. Her
 
 ```jsx
 import React from 'react';
-import { Splash } from '@grams-dev/ui';
+import { Unlock } from '@grams-dev/ui';
 
 const MyComponent = () => {
   return (
-    <Splash onLoad={() => console.log('Component loaded')} />
+    <Unlock onUnlock={() => console.log('User unlocked!')} />
   );
 };
 ```
@@ -71,14 +71,14 @@ For more detailed information and examples, refer to the [Grams UI Documentation
 
 ### Using Component Library CSS Variables
 
-Above we imported `index.css` into the root of our project. `index.css` contains a number of CSS variables that can be used across the project that consumes our component library.
+Above we imported `grams.css` into the root of our project. `grams.css` contains a number of CSS variables that can be used across the project that consumes our component library.
 
 In your CSS, you can use the variables defined in `variables.css` like:
 
 ```CSS
 .example-container {
-    color: var(--grams-primary);
-    background-color: var(--grams-accent-1);
+    color: var(--grams-color-primary);
+    background: var(--grams-background);
 }
 ```
 

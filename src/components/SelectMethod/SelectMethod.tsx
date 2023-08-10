@@ -16,6 +16,8 @@ import { Method, SelectMethodProps } from "./SelectMethod.types";
  */
 const SelectMethod: React.FC<SelectMethodProps> = ({
   basic = false,
+  divided = false,
+  mobile = false,
   selection = true,
   size = 'large',
   methods,
@@ -23,7 +25,6 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
 }) => {
 
   const { t, i18n } = useTranslation();
-  const direction = i18n.dir() === 'ltr' ? 'left' : 'right';
 
   const DEFAULT_METHODS: Method[] = [
     {
@@ -33,46 +34,52 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
       image: "https://assets.grams.dev/img/SelectMethod/new.png"
     },
     {
-      id: "import",
-      header: t("common:onboarding.selectMethod.import.header"),
-      description: t("common:onboarding.selectMethod.import.description"),
-      image: "https://assets.grams.dev/img/SelectMethod/import.png"
-    },
-    {
       id: "seed",
       header: t("common:onboarding.selectMethod.seed.header"),
       description: t("common:onboarding.selectMethod.seed.description"),
       image: "https://assets.grams.dev/img/SelectMethod/seed.png"
-    },
-    {
-      id: "hardware",
-      header: t("common:onboarding.selectMethod.hardware.header"),
-      description: t("common:onboarding.selectMethod.hardware.description"),
-      image: "https://assets.grams.dev/img/SelectMethod/ledger.png"
     }
   ];
 
+  if (!mobile) {
+    DEFAULT_METHODS.push(...[
+      {
+        id: "import",
+        header: t("common:onboarding.selectMethod.import.header"),
+        description: t("common:onboarding.selectMethod.import.description"),
+        image: "https://assets.grams.dev/img/SelectMethod/import.png"
+      },
+      {
+        id: "hardware",
+        header: t("common:onboarding.selectMethod.hardware.header"),
+        description: t("common:onboarding.selectMethod.hardware.description"),
+        image: "https://assets.grams.dev/img/SelectMethod/ledger.png"
+      }
+    ])
+  }
+
   return (
-      <Segment
-        dir={i18n.dir()}
-        data-testid="SelectMethod"
-        basic={basic}
+    <Segment
+      dir={i18n.dir()}
+      data-testid="SelectMethod"
+      basic={basic}
+    >
+      <List
+        divided={divided}
+        size={size}
+        selection={selection}
       >
-        <List
-          size={size}
-          selection={selection}
-        >
-          {(methods || DEFAULT_METHODS).map(method => (
-            <List.Item key={method.id} onClick={() => onSelect?.(method.id)} >
-              <Image avatar src={method.image} />
-              <List.Content>
-                <List.Header>{method.header}</List.Header>
-                <List.Description>{method.description}</List.Description>
-              </List.Content>
-            </List.Item>
-          ))}
-        </List>
-      </Segment>
+        {(methods || DEFAULT_METHODS).map(method => (
+          <List.Item key={method.id} onClick={() => onSelect?.(method.id)} >
+            <Image avatar src={method.image} />
+            <List.Content>
+              <List.Header>{method.header}</List.Header>
+              <List.Description>{method.description}</List.Description>
+            </List.Content>
+          </List.Item>
+        ))}
+      </List>
+    </Segment>
   );
 }
 

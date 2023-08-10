@@ -35,6 +35,16 @@ export interface SelectMethodProps {
     basic?: boolean;
 
     /**
+     * A list can show divisions between content.
+     */
+    divided?: boolean;
+
+    /**
+     * If set, return only the options to create new profile, or import a 24-word seed.
+     */
+    mobile?: boolean;
+
+    /**
      * If set to true, the component will allow selection.
      */
     selection?: boolean;

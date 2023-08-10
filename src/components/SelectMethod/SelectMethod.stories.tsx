@@ -4,7 +4,8 @@ import SelectMethod from "./SelectMethod";
 
 const meta: Meta<typeof SelectMethod> = {
   title: "Selection/SelectMethod",
-  component: SelectMethod
+  component: SelectMethod,
+  tags: ["autodocs"]
 };
 
 export default meta;
@@ -12,4 +13,10 @@ export default meta;
 type Story = StoryObj<typeof SelectMethod>;
 
 export const Primary: Story = {
+};
+
+export const Basic: Story = {
+  args: {
+    basic: true
+  }
 };

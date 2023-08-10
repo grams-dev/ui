@@ -4,7 +4,8 @@ import SelectLocale from "./SelectLocale";
 
 const meta: Meta<typeof SelectLocale> = {
   title: "Selection/SelectLocale",
-  component: SelectLocale
+  component: SelectLocale,
+  tags: ["autodocs"]
 };
 
 export default meta;

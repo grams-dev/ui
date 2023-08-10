@@ -15,6 +15,12 @@ type Story = StoryObj<typeof NewProfile>;
 export const Primary: Story = {
 };
 
+export const Basic: Story = {
+  args: {
+    basic: true
+  }
+};
+
 export const Advanced: Story = {
   args: {
     advanced: true

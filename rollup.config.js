@@ -36,9 +36,9 @@ export default {
     copy({
       targets: [
         {
-          src: "src/index.css",
+          src: "src/grams.css",
           dest: "dist",
-          rename: "index.css"
+          rename: "grams.css"
         }
       ]
     })

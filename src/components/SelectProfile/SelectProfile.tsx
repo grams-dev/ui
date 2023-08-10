@@ -4,16 +4,17 @@ import React, {
 } from "react";
 import { useTranslation } from 'react-i18next';
 
-import { List } from 'semantic-ui-react';
+import { List, Segment } from 'semantic-ui-react';
 
 import Profile from '../../components/Profile';
 
 import { SelectProfileProps } from "./SelectProfile.types";
 
-import "./SelectProfile.css";
-
+/**
+ * Allows users to choose a profile from a list of options. Can be rendered horizontally or vertically
+ */
 const SelectProfile: React.FC<SelectProfileProps> = ({
-  className,
+  basic = false,
   profiles,
   horizontal,
   createNew = true,
@@ -25,21 +26,19 @@ const SelectProfile: React.FC<SelectProfileProps> = ({
   const { t, i18n } = useTranslation();
 
   return (
-    <div
-      data-testid='SelectProfile'
-      className={className || 'selectprofile-page'}
+    <Segment
+      data-testid="SelectProfile"
+      basic={basic}
     >
-      <div className='selectprofile-content'>
-        <List
-          horizontal={horizontal}
-          relaxed
-          size="big"
-        >
-          {profiles?.map(profile => <Profile {...profile} onSelect={onSelect} />)}
-          {createNew && <Profile id="new-profile" name={t("common:pages.selectProfile.new")} image={newImage} onSelect={onCreate} />}
-        </List>
-      </div>
-    </div>
+      <List
+        horizontal={horizontal}
+        relaxed
+        size="big"
+      >
+        {profiles?.map(profile => <Profile {...profile} onSelect={onSelect} />)}
+        {createNew && <Profile id="new-profile" name={t("common:pages.selectProfile.new")} image={newImage} onSelect={onCreate} />}
+      </List>
+    </Segment>
   );
 };
 

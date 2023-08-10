@@ -8,15 +8,11 @@ describe("Test Component", () => {
   let props: SelectLocaleProps;
 
   beforeEach(() => {
-    props = {
-      className: "page"
-    };
   });
 
   const renderComponent = () => render(<SelectLocale {...props} />);
 
   it("should render className correctly", () => {
-    props.className = "page";
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("SelectLocale");

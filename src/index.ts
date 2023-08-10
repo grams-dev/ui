@@ -1,25 +1,20 @@
 /**
  * Components
  */
-import Profile from "./components/Profile/Profile";
+import NewProfile from "./components/NewProfile";
+import Page from "./components/Page";
+import Profile from "./components/Profile";
+import SelectLocale from "./components/SelectLocale";
+import SelectMethod from "./components/SelectMethod";
+import SelectProfile from "./components/SelectProfile";
+import Unlock from "./components/Unlock";
 
 export {
-    Profile
-}
-
-/**
- * Pages
- */
-import Onboarding from "./pages/Onboarding";
-import SelectLocale from "./pages/SelectLocale";
-import SelectProfile from "./pages/SelectProfile";
-import Splash from "./pages/Splash";
-import Unlock from "./pages/Unlock";
-
-export {
-    Onboarding,
-    SelectProfile,
+    NewProfile,
+    Page,
+    Profile,
     SelectLocale,
-    Splash,
+    SelectMethod,
+    SelectProfile,
     Unlock
 }

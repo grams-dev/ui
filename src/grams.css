@@ -3,7 +3,7 @@
 
 /** CSS Variables **/
 :root {
-  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
+  --grams-font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif;
 
   /** Background **/
   --grams-background: #f4f5f862;
@@ -183,26 +183,36 @@
   }
 }
 
-/** CSS Classes **/
+/** CSS Overrides **/
+
 body {
   background: var(--grams-background);
-  font-family: 'Open Sans', 'Noto Sans Arabic', sans-serif !important;
 }
 
+/*Placeholder Override*/
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: var(--grams-font-family) !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: var(--grams-font-family) !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-family: var(--grams-font-family) !important;
+}
+
+/*Semantic UI Override*/
+.ui {
+  font-family: var(--grams-font-family) !important;
+}
+
+/** CSS Classes **/
 .page {
-  display: grid;
-  place-items: center;
   height: 100%;
   width: 100%;
-  background: var(--grams-background);
+}
 
-  > .content {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 320px;
-    max-width: 450px;
-  }
+.column {
+  max-width: 450px;
 }

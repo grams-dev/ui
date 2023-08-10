@@ -9,12 +9,15 @@ import {
 
 import { Method, SelectMethodProps } from "./SelectMethod.types";
 
-import "./SelectMethod.css";
-
+/**
+ * Allows users to choose a method from a list of options. Defaults to the options for onboarding.
+ * 
+ * Each method must be constructed using an id, header, description, and image.
+ */
 const SelectMethod: React.FC<SelectMethodProps> = ({
-  basic = true,
+  basic = false,
   selection = true,
-  size = 'massive',
+  size = 'large',
   methods,
   onSelect
 }) => {

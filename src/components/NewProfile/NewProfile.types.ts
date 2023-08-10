@@ -9,7 +9,7 @@ export type NewProfileRequest = {
     /** The password associated with the profile. */
     password: string;
     /** The PIN code for additional security. */
-    pin: number;
+    pin: string;
 }
 
 /**
@@ -18,8 +18,6 @@ export type NewProfileRequest = {
 export interface NewProfileProps {
     /** Makes the segment basic. Default is false. */
     basic?: boolean;
-    /** Returns only the form without the segment, title, description. Default is false. */
-    form?: boolean;
     /** Includes advanced options in the component. Default is false. */
     advanced?: boolean;
     /** Makes the component take the full width of its container. Default is false. */

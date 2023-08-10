@@ -8,15 +8,11 @@ describe("Test Component", () => {
   let props: SelectProfileProps;
 
   beforeEach(() => {
-    props = {
-      className: "page"
-    };
   });
 
   const renderComponent = () => render(<SelectProfile {...props} />);
 
   it("should render className correctly", () => {
-    props.className = "page";
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("SelectProfile");

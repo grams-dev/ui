@@ -5,7 +5,8 @@ import { ProfileProps } from "../../components/Profile/Profile.types";
 
 const meta: Meta<typeof SelectProfile> = {
   title: "Selection/SelectProfile",
-  component: SelectProfile
+  component: SelectProfile,
+  tags: ["autodocs"]
 };
 
 export default meta;
@@ -36,6 +37,14 @@ export const Populated: Story = {
 
 export const Horizontal: Story = {
   args: {
+    profiles: populatedProfiles,
+    horizontal: true
+  }
+}
+
+export const Basic: Story = {
+  args: {
+    basic: true,
     profiles: populatedProfiles,
     horizontal: true
   }

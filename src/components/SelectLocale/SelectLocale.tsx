@@ -15,19 +15,24 @@ import {
 
 import { SelectLocaleProps, LocaleOption } from "./SelectLocale.types";
 
-import "./SelectLocale.css";
-
 const DEFAULT_LOCALES: LocaleOption[] = [
   { key: 'en', value: 'en', text: 'English', flag: 'us' },
   { key: 'ar', value: 'ar', text: 'عربي', flag: 'sa' },
 ]
 
-const SelectLocale: React.FC<SelectLocaleProps> = ({ basic, className, onSelect, onConfirm }) => {
+/**
+ * Allows users to choose a locale from a list of options.
+ */
+const SelectLocale: React.FC<SelectLocaleProps> = ({
+  basic = false,
+  locales = DEFAULT_LOCALES,
+  onSelect,
+  onConfirm
+}: SelectLocaleProps) => {
 
   const { t, i18n } = useTranslation();
 
   const [selected, setSelected] = useState("");
-  const locales = DEFAULT_LOCALES;
 
   const onValueChange = (event, { value }) => {
     setSelected(value);
@@ -47,38 +52,31 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({ basic, className, onSelect,
   }
 
   return (
-    <div
-      data-testid='SelectLocale'
-      className={className || 'page'}
-    >
-      <div className='selectlocale-content'>
-        <Segment basic={basic}>
-          <List>
-            <List.Item className="mb-small">
-              <Dropdown
-                button
-                fluid
-                onChange={onValueChange}
-                options={locales}
-                trigger={trigger()}
-                value={selected}
-              />
-            </List.Item>
-            <List.Item>
-              <Button
-                primary
-                disabled={!selected}
-                fluid
-                onClick={() => onConfirm?.(selected)}
-                size="large"
-              >
-                {t('common:pages.selectLocale.confirm')}
-              </Button>
-            </List.Item>
-          </List>
-        </Segment>
-      </div>
-    </div>
+    <Segment basic={basic}>
+      <List>
+        <List.Item>
+          <Dropdown
+            button
+            fluid
+            onChange={onValueChange}
+            options={locales}
+            trigger={trigger()}
+            value={selected}
+          />
+        </List.Item>
+        <List.Item>
+          <Button
+            primary
+            disabled={!selected}
+            fluid
+            onClick={() => onConfirm?.(selected)}
+            size="large"
+          >
+            {t('common:pages.selectLocale.confirm')}
+          </Button>
+        </List.Item>
+      </List>
+    </Segment>
   );
 };
 

@@ -206,6 +206,9 @@ body {
 .ui {
   font-family: var(--grams-font-family) !important;
 }
+.header {
+  font-family: var(--grams-font-family) !important;
+}
 
 /** CSS Classes **/
 .page {

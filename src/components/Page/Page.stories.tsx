@@ -6,7 +6,8 @@ import Page from "./Page";
 
 const meta: Meta<typeof Page> = {
   title: "Layout/Page",
-  component: Page
+  component: Page,
+  tags: ["autodocs"]
 };
 
 export default meta;

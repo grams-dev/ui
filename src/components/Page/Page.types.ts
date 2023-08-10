@@ -6,6 +6,11 @@ import React from "react";
 export interface PageProps {
 
     /**
+     * Aligns the content of the page to the center.
+     */
+    centered?: boolean;
+
+    /**
      * Overwrite CSS classes that can be applied to the content.
      */
     className?: string;
@@ -14,4 +19,14 @@ export interface PageProps {
      * Content to be rendered on at the center of the page.
      */
     children?: React.ReactNode;
+
+    /**
+     * The content of the page take up the entire width.
+     */
+    full?: boolean;
+
+    /**
+     * Content to be rendered on the majority of the page.
+     */
+    wide?: boolean;
 }

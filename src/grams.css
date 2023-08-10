@@ -209,10 +209,18 @@ body {
 
 /** CSS Classes **/
 .page {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
 .column {
   max-width: 450px;
+}
+
+.wide {
+  max-width: 650px;
+}
+
+.full {
+  max-width: 100%;
 }

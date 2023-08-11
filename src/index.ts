@@ -8,6 +8,7 @@ import SelectLocale from "./components/SelectLocale";
 import SelectMethod from "./components/SelectMethod";
 import SelectProfile from "./components/SelectProfile";
 import Unlock from "./components/Unlock";
+import ViewSeed from "./components/ViewSeed";
 
 export {
     NewProfile,
@@ -16,5 +17,6 @@ export {
     SelectLocale,
     SelectMethod,
     SelectProfile,
-    Unlock
+    Unlock,
+    ViewSeed
 }

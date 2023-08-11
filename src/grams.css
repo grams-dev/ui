@@ -213,9 +213,17 @@ body {
   font-family: var(--grams-font-family) !important;
 }
 
-/*Semantic UI Override*/
+/**
+ * Semantic UI Overrides
+ * TODO: Replace with custom semantic ui theme
+ */
 .ui {
   font-family: var(--grams-font-family) !important;
+  color: var(--grams-color-font);
+}
+
+.segment {
+  background: var(--grams-background);
   color: var(--grams-color-font);
 }
 

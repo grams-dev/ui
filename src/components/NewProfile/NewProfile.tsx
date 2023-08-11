@@ -26,6 +26,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
   basic = false,
   advanced = false,
   fluid = true,
+  size = 'large',
   title,
   description,
   onCreate
@@ -71,13 +72,13 @@ const NewProfile: React.FC<NewProfileProps> = ({
       data-testid="NewProfile"
       basic={basic}
     >
-      <Header as="h2" textAlign="center">
+      <Header as="h1" textAlign="center">
         {title || t('common:profile.newProfile.title')}
       </Header>
-      <p>
+      <p className={`${size} text`}>
         {description || t('common:profile.newProfile.description')}
       </p>
-      <Form onSubmit={onSubmit}>
+      <Form size={size} onSubmit={onSubmit}>
         <Form.Input
           fluid={fluid}
           icon='user'
@@ -127,6 +128,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
         )}
         <Button
           fluid={fluid}
+          size={size}
           type="submit"
           primary
           disabled={!isValid()}

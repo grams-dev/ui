@@ -1,4 +1,4 @@
-import { FlagNameValues } from 'semantic-ui-react';
+import { FlagNameValues, SemanticSIZES } from 'semantic-ui-react';
 
 /**
  * Defines the properties for the SelectLocale component, allowing users to choose a locale from a list of options.
@@ -13,6 +13,11 @@ export interface SelectLocaleProps {
      * An array of locale options to be displayed.
      */
     locales?: LocaleOption[];
+
+    /** 
+     * Defines the size of the component. It can take values from Semantic UI's sizes.
+     */
+    size?: SemanticSIZES;
 
     /** 
      * A callback function that is triggered when a locale is selected.

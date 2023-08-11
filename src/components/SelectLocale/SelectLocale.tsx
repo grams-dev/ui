@@ -5,11 +5,9 @@ import React, {
 import { useTranslation } from 'react-i18next';
 
 import {
-  Button,
-  Dropdown,
   Flag,
+  Form,
   Icon,
-  List,
   Segment
 } from 'semantic-ui-react';
 
@@ -26,6 +24,7 @@ const DEFAULT_LOCALES: LocaleOption[] = [
 const SelectLocale: React.FC<SelectLocaleProps> = ({
   basic = false,
   locales = DEFAULT_LOCALES,
+  size = 'large',
   onSelect,
   onConfirm
 }: SelectLocaleProps) => {
@@ -53,29 +52,25 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({
 
   return (
     <Segment basic={basic}>
-      <List>
-        <List.Item>
-          <Dropdown
-            button
-            fluid
-            onChange={onValueChange}
-            options={locales}
-            trigger={trigger()}
-            value={selected}
-          />
-        </List.Item>
-        <List.Item>
-          <Button
-            primary
-            disabled={!selected}
-            fluid
-            onClick={() => onConfirm?.(selected)}
-            size="large"
-          >
-            {t('common:pages.selectLocale.confirm')}
-          </Button>
-        </List.Item>
-      </List>
+      <Form size={size}>
+        <Form.Dropdown
+          button
+          fluid
+          onChange={onValueChange}
+          options={locales}
+          trigger={trigger()}
+          value={selected}
+        />
+        <Form.Button
+          primary
+          disabled={!selected}
+          fluid
+          onClick={() => onConfirm?.(selected)}
+          size={size}
+        >
+          {t('common:pages.selectLocale.confirm')}
+        </Form.Button>
+      </Form>
     </Segment>
   );
 };

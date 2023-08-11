@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SelectLocale from "./SelectLocale";
 
 const meta: Meta<typeof SelectLocale> = {
-  title: "Selection/SelectLocale",
+  title: "Forms/SelectLocale",
   component: SelectLocale,
   tags: ["autodocs"]
 };

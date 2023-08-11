@@ -1,6 +1,4 @@
-import React, {
-  useState
-} from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { Grid } from "semantic-ui-react";
@@ -8,7 +6,7 @@ import { Grid } from "semantic-ui-react";
 import { PageProps } from "./Page.types";
 
 /**
- * You can define the content of the page by providing either the `content` or `children` property.
+ * A basic component used to display the content of the page in a grid.
  */
 const Page: React.FC<PageProps> = ({ 
   centered, 

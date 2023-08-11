@@ -25,6 +25,7 @@ const Unlock: React.FC<UnlockProps> = ({
   image,
   method = "pin",
   rule,
+  size = 'large',
   onUnlock 
 }: UnlockProps) => {
 
@@ -47,14 +48,14 @@ const Unlock: React.FC<UnlockProps> = ({
 
   return (
     <Segment basic={basic} textAlign="center">
-      <Form size="large">
+      <Form size={size}>
         <Image
           alt='unlock profile image'
           size='tiny'
           avatar
           src={image || "https://assets.grams.dev/img/Unlock/default.png"}
         />
-        <Header as="h3" className='mt-0'>{pname}</Header>
+        <Header as="h2" className='mt-0'>{pname}</Header>
         <Form.Input
           fluid
           icon="lock open"
@@ -68,7 +69,7 @@ const Unlock: React.FC<UnlockProps> = ({
           disabled={!isValid()}
           onClick={onSubmit}
           fluid
-          size="large"
+          size={size}
         >
           {t("common:pages.unlock.confirm")}
         </Button>

@@ -17,7 +17,7 @@ export interface PageProps {
     className?: string;
 
     /**
-     * Content to be rendered on at the center of the page.
+     * Content to be rendered on the page.
      */
     children?: React.ReactNode;
 

@@ -1,3 +1,4 @@
+import { SemanticSIZES } from "semantic-ui-react";
 import { ProfileProps } from "../../components/Profile/Profile.types";
 
 /**
@@ -28,6 +29,11 @@ export interface SelectProfileProps {
      * The URL of the image to be displayed for the 'create new' option.
      */
     newImage?: string;
+
+    /** 
+     * Defines the size of the component. It can take values from Semantic UI's sizes.
+     */
+    size?: SemanticSIZES;
 
     /**
      * A callback function that is triggered when a profile is selected.

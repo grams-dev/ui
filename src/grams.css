@@ -10,6 +10,11 @@
   /* A soft, light background color */
   --grams-background-rgb: 244, 245, 248;
 
+  /** Font Color **/
+  --grams-color-font: #121214;
+  /* A deep, dark background color */
+  --grams-color-font-rgb: 18, 18, 20;
+
   /** primary **/
   --grams-color-primary: #1a73e8;
   /* A confident blue */
@@ -100,6 +105,11 @@
     /* A deep, dark background color */
     --grams-background-rgb: 18, 18, 20;
 
+    /** Font Color **/
+    --grams-color-font: #f1f1f1;
+    /* A deep, dark background color */
+    --grams-color-font-rgb: 18, 18, 20;
+
     /** primary **/
     --grams-color-primary: #4c8dff;
     /* Brighter blue for dark background */
@@ -187,6 +197,7 @@
 
 body {
   background: var(--grams-background);
+  color: var(--grams-color-font) !important;
 }
 
 /*Placeholder Override*/
@@ -205,9 +216,17 @@ body {
 /*Semantic UI Override*/
 .ui {
   font-family: var(--grams-font-family) !important;
+  color: var(--grams-color-font);
 }
+
 .header {
   font-family: var(--grams-font-family) !important;
+  color: var(--grams-color-font) !important;
+}
+
+.description {
+  font-family: var(--grams-font-family) !important;
+  color: var(--grams-color-font) !important;
 }
 
 /** CSS Classes **/
@@ -226,4 +245,28 @@ body {
 
 .full {
   max-width: 100%;
+}
+
+.small.text {
+  font-size: 0.75rem;
+}
+
+.medium.text {
+  font-size: 1rem;
+}
+
+.large.text {
+  font-size: 1.5rem;
+}
+
+.big.text {
+  font-size: 1.75rem;
+}
+
+.huge.text {
+  font-size: 2rem;
+}
+
+.massive.text {
+  font-size: 2rem;
 }

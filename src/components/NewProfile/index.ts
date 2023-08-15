@@ -1,1 +1,6 @@
-export { default } from "./NewProfile";
+import NewProfile from "./NewProfile";
+export * from "./NewProfile.types";
+
+export {
+    NewProfile
+}

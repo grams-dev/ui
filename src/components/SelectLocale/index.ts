@@ -1,1 +1,6 @@
-export { default } from "./SelectLocale";
+import SelectLocale from "./SelectLocale";
+export * from "./SelectLocale.types";
+
+export {
+    SelectLocale
+}

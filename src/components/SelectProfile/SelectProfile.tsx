@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { List, Segment } from 'semantic-ui-react';
 
-import Profile from '../../components/Profile';
+import { Profile } from '../../components/Profile';
 
 import { SelectProfileProps } from "./SelectProfile.types";
 

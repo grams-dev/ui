@@ -30,7 +30,13 @@ generatedTemplates.forEach((template) => {
   );
 });
 
-fs.writeFileSync(`${componentDirectory}/index.ts`, `export { default } from "./${componentName}";
+fs.writeFileSync(`${componentDirectory}/index.ts`, 
+`import ${componentName} from "./${componentName}";
+
+export * from "./${componentName}.types";
+export {
+  ${componentName}
+}
 `);
 
 console.log(

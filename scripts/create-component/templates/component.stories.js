@@ -5,7 +5,8 @@ import ${componentName} from "./${componentName}";
 
 const meta: Meta<typeof ${componentName}> = {
   title: "Components/${componentName}",
-  component: ${componentName}
+  component: ${componentName},
+  tags: ["autodocs"]
 };
 
 export default meta;

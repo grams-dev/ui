@@ -30,14 +30,21 @@ const SelectProfile: React.FC<SelectProfileProps> = ({
     <Segment
       data-testid="SelectProfile"
       basic={basic}
+      textAlign="center"
     >
       <List
         horizontal={horizontal}
         relaxed
         size={size}
       >
-        {profiles?.map(profile => <Profile {...profile} onSelect={onSelect} />)}
-        {createNew && <Profile id="new-profile" name={t("common:pages.selectProfile.new")} image={newImage} onSelect={onCreate} />}
+        {profiles?.map(profile => <Profile key={profile.id} {...profile} onSelect={onSelect} />)}
+        {createNew && 
+        <Profile 
+          id="new-profile" 
+          name={t("common:pages.selectProfile.new")} 
+          image={newImage} 
+          onSelect={onCreate} 
+        />}
       </List>
     </Segment>
   );

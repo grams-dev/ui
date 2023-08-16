@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ViewSeed from "./ViewSeed";
 
 const meta: Meta<typeof ViewSeed> = {
-  title: "Components/ViewSeed",
+  title: "Views/ViewSeed",
   component: ViewSeed,
   tags: ["autodocs"]
 };

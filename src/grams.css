@@ -278,3 +278,9 @@ body {
 .massive.text {
   font-size: 2rem;
 }
+
+.speeddial {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

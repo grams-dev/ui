@@ -10,7 +10,7 @@ import { PageProps } from "./Page.types";
  */
 const Page: React.FC<PageProps> = ({ 
   centered, 
-  className, 
+  className = 'content', 
   children, 
   full,
   verticalAlign = 'middle',

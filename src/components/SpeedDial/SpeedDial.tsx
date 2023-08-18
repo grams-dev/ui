@@ -2,8 +2,6 @@ import React, {
   useState
 } from "react";
 
-import { SpeedDialProps } from "./SpeedDial.types";
-
 import {
   Button,
   Dropdown,
@@ -11,43 +9,47 @@ import {
 } from 'semantic-ui-react';
 
 import {
-  BsPersonCircle
-} from 'react-icons/bs';
+  MdAdd
+} from 'react-icons/md';
+
+import { Fab, Action as FabAction } from 'react-tiny-fab';
+import 'react-tiny-fab/dist/styles.css';
+
+import { ActionProps, Action as SDAction } from "./Action";
+import { SpeedDialProps } from "./SpeedDial.types";
+
+type ActionSpec = React.FC<ActionProps>;
+export type SpeedDialSpec = React.FC<SpeedDialProps> & { Action: typeof SDAction };
 
 /**
  * When pressed, a floating action button can display in the form of a Speed Dial.
  */
-const SpeedDial: React.FC<SpeedDialProps> = ({
+const SpeedDial: SpeedDialSpec = ({
+  children,
   color,
-  icon = 'angle up',
+  event = 'hover',
+  icon,
   size = 'large',
-  upward = false,
+  showTitles = true,
 }) => {
 
   const iconClass = 'icon';
 
+  const mainButtonStyles = {
+    fill: 'white',
+    backgroundColor: '#4c8dff'
+  };
+
   return (
-    <div
-      data-testid="SpeedDial"
+    <Fab
+      mainButtonStyles={mainButtonStyles}
+      icon={icon || <MdAdd />}
+      alwaysShowTitle={showTitles}
     >
-    </div>
+      {children}
+    </Fab>
   )
-  /*return (
-    <Dropdown
-      icon={false}
-      data-testid="SpeedDial"
-      floating
-      trigger={
-        <Button color={color} circular size={size} icon={icon}></Button>
-      }
-      upward={upward}
-    >
-      <Dropdown.Menu className="speeddial">
-      <Button circular icon="add" />
-        <Dropdown.Item><BsPersonCircle className={iconClass} />New Wallet</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-  );*/
 }
 
+SpeedDial.Action = SDAction;
 export default SpeedDial;

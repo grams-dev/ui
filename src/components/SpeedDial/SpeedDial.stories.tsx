@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import SpeedDial from "./SpeedDial";
 
 const meta: Meta<typeof SpeedDial> = {
-  title: "Components/SpeedDial",
+  title: "Elements/SpeedDial",
   component: SpeedDial,
   tags: ["autodocs"]
 };

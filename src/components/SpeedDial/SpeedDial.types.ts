@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { SemanticCOLORS, SemanticICONS, SemanticSIZES } from "semantic-ui-react";
 
 export type SpeedDialAction = {
@@ -9,8 +10,10 @@ export type SpeedDialAction = {
   * The props used by SpeedDial
   */
 export interface SpeedDialProps {
+  children: ReactNode;
   color?: SemanticCOLORS;
-  icon?: SemanticICONS;
+  event?: 'click' | 'hover';
+  icon?: ReactNode;
   size?: SemanticSIZES;
-  upward?: boolean;
+  showTitles?: boolean;
 }

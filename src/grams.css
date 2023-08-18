@@ -243,7 +243,7 @@ body {
   width: 100%;
 }
 
-.column {
+.content {
   max-width: 450px;
 }
 
@@ -283,4 +283,19 @@ body {
   background: none !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+.fabs {
+  --_viewport-margin: 2.5vmin;
+
+  position: fixed;
+  z-index: var(--layer-1);
+
+  inset-block: auto var(--_viewport-margin);
+  inset-inline: auto var(--_viewport-margin);
+
+  display: flex;
+  flex-direction: column-reverse;
+  place-items: center;
+  gap: var(--_viewport-margin);
 }

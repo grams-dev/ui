@@ -73,7 +73,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
       basic={basic}
     >
       <Header as="h1" textAlign="center">
-        {title || t('common:profile.newProfile.title')}
+        {title || t('ui:newProfile.title')}
       </Header>
       <p className={`${size} text`}>
         {description || t('common:profile.newProfile.description')}

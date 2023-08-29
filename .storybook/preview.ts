@@ -23,6 +23,13 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+          method: 'alphabetical',
+          order: ['Grams UI', ['Introduction', 'Components'], '*'],
+          locales: 'en-US',
+      }
+    }
   }
 };
 

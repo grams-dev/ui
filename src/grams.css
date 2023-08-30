@@ -279,6 +279,11 @@ body {
   font-size: 2rem;
 }
 
+.profile {
+  text-align: center;
+  align-items: center;
+}
+
 .speeddial {
   background: none !important;
   border: none !important;

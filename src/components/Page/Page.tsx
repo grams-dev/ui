@@ -9,12 +9,13 @@ import { PageProps } from "./Page.types";
  * A basic component used to display the content of the page in a grid.
  */
 const Page: React.FC<PageProps> = ({ 
-  centered, 
-  className = 'content', 
-  children, 
+  centered,
+  className = 'content',
+  children,
+  empty = false,
   full,
   verticalAlign = 'middle',
-  wide 
+  wide
 }) => {
 
   const { i18n } = useTranslation();
@@ -28,12 +29,15 @@ const Page: React.FC<PageProps> = ({
       className="page"
       verticalAlign={verticalAlign}
     >
-      <Grid.Column
-        className={`${className} ${wide && 'wide'} ${full && 'full'}`}
-        textAlign={textAlignment}
-      >
-        { children }
-      </Grid.Column>
+      { !empty &&
+        <Grid.Column
+          className={`${className} ${wide && 'wide'} ${full && 'full'}`}
+          textAlign={textAlignment}
+        >
+          { children }
+        </Grid.Column>
+      }
+      { empty && children }
     </Grid>
   );
 }

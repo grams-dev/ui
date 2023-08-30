@@ -22,6 +22,11 @@ export interface PageProps {
     children?: React.ReactNode;
 
     /**
+     * Toggles between including children in a column or directly into the grid.
+     */
+    empty?: boolean;
+
+    /**
      * The content of the page take up the entire width.
      */
     full?: boolean;

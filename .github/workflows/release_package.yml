@@ -5,6 +5,14 @@ on:
       release-type:
         description: 'Release type (one of): patch, minor, major, prepatch, preminor, premajor, prerelease'
         required: true
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
+        - prepatch
+        - premajor
+        - prerelease
 jobs:
   release:
     runs-on: ubuntu-latest

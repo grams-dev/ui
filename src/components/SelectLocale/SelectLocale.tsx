@@ -23,7 +23,9 @@ const DEFAULT_LOCALES: LocaleOption[] = [
  */
 const SelectLocale: React.FC<SelectLocaleProps> = ({
   basic = false,
+  icon = false,
   locales = DEFAULT_LOCALES,
+  simple = false,
   size = 'large',
   onSelect,
   onConfirm
@@ -45,7 +47,7 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({
       <>
         {option && <Flag name={option.flag} />}
         {!option && <Icon name='world' />}
-        {option?.text || t('common:pages.selectLocale.placeholder')}
+        {!icon && (option?.text || t('ui:selectLocale.placeholder'))}
       </>
     );
   }
@@ -61,15 +63,17 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({
           trigger={trigger()}
           value={selected}
         />
-        <Form.Button
-          primary
-          disabled={!selected}
-          fluid
-          onClick={() => onConfirm?.(selected)}
-          size={size}
-        >
-          {t('common:pages.selectLocale.confirm')}
-        </Form.Button>
+        { !simple &&
+          <Form.Button
+            primary
+            disabled={!selected}
+            fluid
+            onClick={() => onConfirm?.(selected)}
+            size={size}
+          >
+            {t('ui:selectLocale.confirm')}
+          </Form.Button>
+        }
       </Form>
     </Segment>
   );

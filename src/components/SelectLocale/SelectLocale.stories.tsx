@@ -20,3 +20,11 @@ export const Basic: Story = {
     basic: true
   }
 };
+
+export const Minified: Story = {
+  args: {
+    basic: true,
+    icon: true,
+    simple: true
+  }
+};

@@ -4,15 +4,26 @@ import { FlagNameValues, SemanticSIZES } from 'semantic-ui-react';
  * Defines the properties for the SelectLocale component, allowing users to choose a locale from a list of options.
  */
 export interface SelectLocaleProps {
+
     /** 
      * If set to true, applies a basic style to the component.
      */
     basic?: boolean;
 
     /** 
+     * If set to true, the dropdown will only show the flag icon without text.
+     */
+    icon?: boolean;
+
+    /** 
      * An array of locale options to be displayed.
      */
     locales?: LocaleOption[];
+
+    /** 
+     * If set to true, there will be no confirm button.
+     */
+    simple?: boolean;
 
     /** 
      * Defines the size of the component. It can take values from Semantic UI's sizes.

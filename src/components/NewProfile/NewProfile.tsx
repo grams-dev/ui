@@ -76,7 +76,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
         {title || t('ui:newProfile.title')}
       </Header>
       <p className={`${size} text`}>
-        {description || t('common:profile.newProfile.description')}
+        {description || t('ui:newProfile.description')}
       </p>
       <Form size={size} onSubmit={onSubmit}>
         <Form.Input
@@ -84,7 +84,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
           icon='user'
           iconPosition={direction}
           onChange={onNameChange}
-          placeholder={t('common:profile.newProfile.placeholder.name')}
+          placeholder={t('ui:newProfile.placeholder.name')}
           type='text'
           value={name}
         />
@@ -93,7 +93,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
           icon='key'
           iconPosition={direction}
           onChange={onPasswordChange}
-          placeholder={t('common:profile.newProfile.placeholder.password')}
+          placeholder={t('ui:newProfile.placeholder.password')}
           type='password'
           value={password}
         />
@@ -102,7 +102,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
           icon='lock open'
           iconPosition={direction}
           onChange={onPinChange}
-          placeholder={t('common:profile.newProfile.placeholder.pin')}
+          placeholder={t('ui:newProfile.placeholder.pin')}
           type='password' pattern="[0-9]*" inputMode="numeric"
           value={pin}
         />
@@ -113,16 +113,14 @@ const NewProfile: React.FC<NewProfileProps> = ({
               onClick={() => setActive(!active)}
             >
               <Icon name='dropdown' />
-              {t('common:profile.newProfile.accordion.title')}
+              {t('ui:newProfile.accordion.title')}
             </Accordion.Title>
             <Accordion.Content active={active}>
-              <Segment>
                 <Checkbox
-                  label={t('common:profile.newProfile.accordion.label')}
+                  label={t('ui:newProfile.accordion.label')}
                   onChange={onDeveloperModeToggle}
                   value={isDeveloper ? 1 : 0}
                 />
-              </Segment>
             </Accordion.Content>
           </Accordion>
         )}
@@ -133,7 +131,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
           primary
           disabled={!isValid()}
         >
-          {t('common:profile.newProfile.confirm')}
+          {t('ui:newProfile.confirm')}
         </Button>
       </Form>
     </Segment>

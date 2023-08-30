@@ -33,7 +33,7 @@ export interface NewProfileProps {
     basic?: boolean;
 
     /** 
-     * Includes advanced options in the component. Default is false.
+     * Includes advanced options in the form. Default is false.
      */
     advanced?: boolean;
 
@@ -48,12 +48,12 @@ export interface NewProfileProps {
     size?: SemanticSIZES;
 
     /** 
-     * Optional title for the component.
+     * Optional title for the form.
      */
     title?: string;
 
     /** 
-     * Optional description for the component.
+     * Optional description for the form.
      */
     description?: string;
 

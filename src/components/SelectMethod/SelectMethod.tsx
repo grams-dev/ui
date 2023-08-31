@@ -2,15 +2,15 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 
 import {
-  Image,
-  List,
   Segment
 } from 'semantic-ui-react';
+
+import { SelectItem } from "../SelectItem";
 
 import { Method, SelectMethodProps } from "./SelectMethod.types";
 
 /**
- * Allows users to choose a method from a list of options. Defaults to the options for onboarding.
+ * Allows users to choose an onboarding method from a list of options. This is sugar for `SelectItem`
  * 
  * Each method must be constructed using an id, header, description, and image.
  */
@@ -29,15 +29,15 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
   const DEFAULT_METHODS: Method[] = [
     {
       id: "new",
-      header: t("common:onboarding.selectMethod.new.header"),
-      description: t("common:onboarding.selectMethod.new.description"),
-      image: "https://assets.grams.dev/img/SelectMethod/new.png"
+      header: t("ui:selectMethod.new.header"),
+      description: t("ui:selectMethod.new.description"),
+      image: "https://assets.grams.dev/img/ui/SelectMethod/new.png"
     },
     {
       id: "seed",
-      header: t("common:onboarding.selectMethod.seed.header"),
-      description: t("common:onboarding.selectMethod.seed.description"),
-      image: "https://assets.grams.dev/img/SelectMethod/seed.png"
+      header: t("ui:selectMethod.seed.header"),
+      description: t("ui:selectMethod.seed.description"),
+      image: "https://assets.grams.dev/img/ui/SelectMethod/seed.png"
     }
   ];
 
@@ -45,20 +45,40 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
     DEFAULT_METHODS.push(...[
       {
         id: "import",
-        header: t("common:onboarding.selectMethod.import.header"),
-        description: t("common:onboarding.selectMethod.import.description"),
-        image: "https://assets.grams.dev/img/SelectMethod/import.png"
+        header: t("ui:selectMethod.import.header"),
+        description: t("ui:selectMethod.import.description"),
+        image: "https://assets.grams.dev/img/ui/SelectMethod/import.png"
       },
       {
         id: "hardware",
-        header: t("common:onboarding.selectMethod.hardware.header"),
-        description: t("common:onboarding.selectMethod.hardware.description"),
-        image: "https://assets.grams.dev/img/SelectMethod/ledger.png"
+        header: t("ui:selectMethod.hardware.header"),
+        description: t("ui:selectMethod.hardware.description"),
+        image: "https://assets.grams.dev/img/ui/SelectMethod/ledger.png"
       }
     ])
   }
 
   return (
+    <Segment
+      dir={i18n.dir()}
+      data-testid="SelectItem"
+      basic={basic}
+    >
+      <SelectItem
+        divided={divided}
+        selection={selection}
+        size={size}
+        items={methods || DEFAULT_METHODS}
+        onSelect={onSelect}
+      />
+    </Segment>
+  );
+}
+
+export default SelectMethod;
+
+/**
+ * 
     <Segment
       dir={i18n.dir()}
       data-testid="SelectMethod"
@@ -80,7 +100,4 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
         ))}
       </List>
     </Segment>
-  );
-}
-
-export default SelectMethod;
+ */

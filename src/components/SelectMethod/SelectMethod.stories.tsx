@@ -20,3 +20,9 @@ export const Basic: Story = {
     basic: true
   }
 };
+
+export const Mobile: Story = {
+  args: {
+    mobile: true
+  }
+};

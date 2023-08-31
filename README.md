@@ -68,7 +68,7 @@ const MyComponent = () => {
 
 You can customize the appearance and behavior of the UI components using the provided props and CSS styles.
 
-For more detailed information and examples, refer to the [Grams UI Documentation](https://github.com/grams-dev/grams-ui).
+For more detailed information and examples, refer to the [Storybook](https://storybook.grams.dev/).
 
 ### Using Component Library CSS Variables
 
@@ -88,7 +88,7 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_propertie
 
 ## Documentation
 
-Comprehensive documentation for @grams-dev/ui is available at [https://storybook.grams-dev](https://storybook.grams-dev). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
+Comprehensive documentation for @grams-dev/ui is available at [https://storybook.grams.dev](https://storybook.grams.dev). It includes detailed usage instructions, component reference, and examples to help you get started with the package.
 
 ## Contributing
 

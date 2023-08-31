@@ -18,7 +18,7 @@ const SelectProfile: React.FC<SelectProfileProps> = ({
   profiles,
   horizontal,
   createNew = true,
-  newImage = 'https://assets.grams.dev/img/SelectProfile/add.png',
+  newImage = 'https://assets.grams.dev/img/ui/SelectProfile/add.png',
   size = 'big',
   onSelect,
   onCreate
@@ -41,7 +41,7 @@ const SelectProfile: React.FC<SelectProfileProps> = ({
         {createNew && 
         <Profile 
           id="new-profile" 
-          name={t("common:pages.selectProfile.new")} 
+          name={t("ui:selectProfile.new")} 
           image={newImage} 
           onSelect={onCreate} 
         />}

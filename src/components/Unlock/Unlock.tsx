@@ -31,10 +31,10 @@ const Unlock: React.FC<UnlockProps> = ({
 
   const { t, i18n } = useTranslation();
 
-  const [pname, setPname] = useState(name || t("common:pages.unlock.title"));
+  const [pname, setPname] = useState(name || t("ui:unlock.title"));
   const [credential, setCredential] = useState("");
   const crule = rule || method === "password" ? PASSWORD_RULE : PIN_RULE;
-  const placeholder = method === "password" ? t("common:pages.unlock.password") : t("common:pages.unlock.pin");
+  const placeholder = method === "password" ? t("ui:unlock.password") : t("ui:unlock.pin");
   const direction = i18n.dir() === 'ltr' ? 'left' : undefined;
 
   const isValid = () => (
@@ -53,7 +53,7 @@ const Unlock: React.FC<UnlockProps> = ({
           alt='unlock profile image'
           size='tiny'
           avatar
-          src={image || "https://assets.grams.dev/img/Unlock/default.png"}
+          src={image || "https://assets.grams.dev/img/ui/Unlock/default.png"}
         />
         <Header as="h2" className='mt-0'>{pname}</Header>
         <Form.Input
@@ -71,7 +71,7 @@ const Unlock: React.FC<UnlockProps> = ({
           fluid
           size={size}
         >
-          {t("common:pages.unlock.confirm")}
+          {t("ui:unlock.confirm")}
         </Button>
       </Form>
     </Segment>

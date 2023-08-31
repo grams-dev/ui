@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - **[ViewSeed](https://storybook.grams.dev/?path=/docs/views-viewseed--docs)**: A component for safely viewing and managing seed phrases.
 
 - 🎉 New hooks:
-    - **[useInverted](https://storybook.grams.dev/?path=/docs/hooks-useinverted--docs)**: Custom hook for toggling color schemes.
+    - **[useInverted](https://storybook.grams.dev/?path=/docs/hooks-useinverted--docs)**: Custom hook to autofill semantic ui's inverted flag.
     - **[useVariable](https://storybook.grams.dev/?path=/docs/hooks-usevariable--docs)**: Custom hook for managing state variables.
 
 - 🎉 New libraries:

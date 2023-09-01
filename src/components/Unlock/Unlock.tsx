@@ -31,7 +31,6 @@ const Unlock: React.FC<UnlockProps> = ({
 
   const { t, i18n } = useTranslation();
 
-  const [pname, setPname] = useState(name || t("ui:unlock.title"));
   const [credential, setCredential] = useState("");
   const crule = rule || method === "password" ? PASSWORD_RULE : PIN_RULE;
   const placeholder = method === "password" ? t("ui:unlock.password") : t("ui:unlock.pin");
@@ -55,7 +54,7 @@ const Unlock: React.FC<UnlockProps> = ({
           avatar
           src={image || "https://assets.grams.dev/img/ui/Unlock/default.png"}
         />
-        <Header as="h2" className='mt-0'>{pname}</Header>
+        <Header as="h2" className='mt-0'>{ name || t("ui:unlock.title") }</Header>
         <Form.Input
           fluid
           icon="lock open"

@@ -200,6 +200,10 @@ body {
   color: var(--grams-color-font) !important;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: var(--grams-font-family) !important;
+}
+
 /*Placeholder Override*/
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-family: var(--grams-font-family) !important;

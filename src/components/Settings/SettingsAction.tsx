@@ -28,7 +28,7 @@ const SettingsAction: React.FC<SettingsActionProps> = ({
         'dropdown':
             <Dropdown
                 selection
-                options={options}
+                options={options || []}
                 defaultValue={defaultState}
                 onChange={(e, data) => onChange?.(data.value)}
             />,

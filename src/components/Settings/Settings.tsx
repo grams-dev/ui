@@ -24,7 +24,7 @@ const Settings: SettingsSpec = ({
   return (
     <div data-testid="Settings">
       {(settings || []).map((setting, idx) => (
-        <>
+        <div key={idx}>
           <Settings.Item
             key={setting.header}
             action={setting.action}
@@ -36,7 +36,7 @@ const Settings: SettingsSpec = ({
           {(idx < settings.length-1) && (
             <Divider />
           )}
-        </>
+        </div>
       ))}
     </div>
   );

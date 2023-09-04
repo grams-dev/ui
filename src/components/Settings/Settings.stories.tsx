@@ -19,12 +19,15 @@ const GeneralSettings: SettingsItemProps[] = [
       type: 'dropdown',
       options: [
         {
+          key: 'dark',
           text: 'Dark'
         },
         {
+          key: 'light',
           text: 'Light'
         },
         {
+          key: 'system',
           text: 'System theme'
         }
       ],

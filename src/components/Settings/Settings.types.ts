@@ -18,9 +18,6 @@ export interface SettingsActionProps {
   /** Specifies the text for a confirm button, if applicable. */
   confirmText?: string;
   
-  /** Sets the initial state value for controls like 'checkbox', 'toggle', 'input', etc. */
-  defaultState?: string | number | boolean | (string | number | boolean)[];
-  
   /** Callback function triggered when the action state changes. */
   onChange?: (value: string | number | boolean | (string | number | boolean)[]) => void;
   
@@ -34,6 +31,9 @@ export interface SettingsActionProps {
    * Defines the size of the component.
    */
   size?: 'mini' | 'small' | 'large' | 'big' | 'huge' | 'massive';
+  
+  /** Sets the state value for controls like 'checkbox', 'toggle', 'input', etc. */
+  value?: string | number | boolean | (string | number | boolean)[];
 }
 
 /**

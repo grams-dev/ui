@@ -9,47 +9,47 @@ import { SettingsActionProps } from "./Settings.types";
 const SettingsAction: React.FC<SettingsActionProps> = ({
     type,
     confirmText,
-    defaultState,
     onChange,
     onConfirm,
     options,
     primary = true,
     text,
-    size = "large"
+    size = "large",
+    value
 }) => {
 
     const modules = {
         'checkbox':
             <Checkbox
                 label={text}
-                checked={Boolean(defaultState)}
+                checked={Boolean(value)}
                 onChange={(e, data) => onChange?.(data.checked)}
             />,
         'dropdown':
             <Dropdown
                 selection
                 options={options || []}
-                defaultValue={defaultState}
+                value={value}
                 onChange={(e, data) => onChange?.(data.value)}
             />,
         'input':
             <Input
                 size={size}
-                defaultValue={defaultState as string}
+                defaultValue={value as string}
                 onChange={(e, data) => onChange?.(data.value)}
             />,
         'password':
             <Input
                 size={size}
                 type="password"
-                defaultValue={defaultState as string}
+                defaultValue={value as string}
                 onChange={(e, data) => onChange?.(data.value)}
             />,
         'toggle':
             <Checkbox
                 toggle
                 label={text}
-                checked={Boolean(defaultState)}
+                checked={Boolean(value)}
                 onChange={(e, data) => onChange?.(data.checked)}
             />
     }
@@ -62,7 +62,7 @@ const SettingsAction: React.FC<SettingsActionProps> = ({
                     <Button
                         size={size}
                         primary={primary}
-                        onClick={() => onConfirm?.(defaultState)}
+                        onClick={() => onConfirm?.(value)}
                     >
                         {confirmText}
                     </Button>

@@ -1,6 +1,8 @@
 import React from "react";
 
-import { SettingsAction, SettingsItem, SettingsSection } from "./";
+import SettingsAction from "./SettingsAction";
+import SettingsItem from "./SettingsItem";
+import SettingsSection from "./SettingsSection";
 
 import { SettingsProps, SettingsSectionProps, SettingsItemProps, SettingsActionProps } from "./Settings.types";
 import { Divider } from "semantic-ui-react";

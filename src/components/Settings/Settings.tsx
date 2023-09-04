@@ -16,8 +16,10 @@ export type SettingsSpec = React.FC<SettingsProps> &
 /**
  * The Settings component that serves as a container for all settings-related sub-components.
  * TODO:
+ * - className for settings, item, action and section
  * - Radio type
  * - Add secondary and colored actions
+ * - Section icon
  */
 const Settings: SettingsSpec = ({
   settings,

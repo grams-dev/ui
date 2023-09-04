@@ -17,18 +17,22 @@ const GeneralSettings: SettingsItemProps[] = [
     description: "Toggle between light and dark mode, or match your system's theme.",
     action: {
       type: 'dropdown',
+      value: 'dark',
       options: [
         {
           key: 'dark',
-          text: 'Dark'
+          text: 'Dark',
+          value: 'dark'
         },
         {
           key: 'light',
-          text: 'Light'
+          text: 'Light',
+          value: 'light'
         },
         {
           key: 'system',
-          text: 'System theme'
+          text: 'System theme',
+          value: 'system'
         }
       ],
       confirmText: 'Apply'

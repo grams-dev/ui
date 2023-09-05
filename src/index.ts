@@ -12,3 +12,8 @@ export * from "./components/SelectProfile";
 export * from "./components/Settings";
 export * from "./components/Unlock";
 export * from "./components/ViewSeed";
+
+/**
+ * Components
+ */
+export * from "./hooks";

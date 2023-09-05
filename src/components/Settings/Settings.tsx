@@ -16,12 +16,12 @@ export type SettingsSpec = React.FC<SettingsProps> &
 /**
  * The Settings component that serves as a container for all settings-related sub-components.
  * TODO:
- * - className for settings, item, action and section
  * - Radio type
  * - Add secondary and colored actions
  * - Section icon
  */
 const Settings: SettingsSpec = ({
+  className,
   settings,
   size='large'
 }) => {
@@ -29,7 +29,10 @@ const Settings: SettingsSpec = ({
   // You can introduce state and additional logic here
 
   return (
-    <div data-testid="Settings">
+    <div 
+      className={className}
+      data-testid="Settings"
+    >
       {(settings || []).map((setting, idx) => (
         <div key={idx}>
           <Settings.Item

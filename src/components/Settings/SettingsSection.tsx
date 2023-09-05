@@ -12,11 +12,12 @@ import { SettingsSectionProps } from "./Settings.types";
 const SettingsSection: React.FC<SettingsSectionProps> = ({
     basic = false,
     children,
+    className,
     title
 }: SettingsSectionProps) => {
 
     return (
-        <Segment basic={basic}>
+        <Segment basic={basic} className={className}>
             <h2>{title}</h2>
             {children}
         </Segment>

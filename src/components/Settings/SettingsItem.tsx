@@ -10,13 +10,14 @@ import { SettingsItemProps } from "./Settings.types";
 const SettingsItem: React.FC<SettingsItemProps> = ({
     action,
     children,
+    className,
     description,
     header,
     size='large'
 }: SettingsItemProps) => {
 
     return (
-        <div>
+        <div className={className}>
           <h3>{header}</h3>
           <p>{description}</p>
           { action && <SettingsAction size={size} {...action} /> }

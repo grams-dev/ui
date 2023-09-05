@@ -7,6 +7,7 @@ import { SettingsActionProps } from "./Settings.types";
  * It renders different types of UI elements based on the 'type' prop.
  */
 const SettingsAction: React.FC<SettingsActionProps> = ({
+    className,
     type,
     confirmText,
     onChange,
@@ -55,7 +56,7 @@ const SettingsAction: React.FC<SettingsActionProps> = ({
     }
 
     return (
-        <div>
+        <div className={className}>
             {modules[type]}
             {confirmText &&
                 <div>

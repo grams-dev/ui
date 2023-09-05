@@ -5,6 +5,9 @@ import { DropdownItemProps } from "semantic-ui-react";
   * Describes the type and characteristics of an action within a settings item.
   */
 export interface SettingsActionProps {
+  
+  /** Override class names. */
+  className?: string;
 
   /** Specifies the type of UI control to render ('button', 'checkbox', 'dropdown', 'input', 'password', 'toggle'). */
   type: 'checkbox' | 'dropdown' | 'input' | 'password' | 'toggle';
@@ -40,6 +43,9 @@ export interface SettingsActionProps {
   * Describes the properties of a settings section container.
   */
 export interface SettingsSectionProps {
+  
+  /** Override class names. */
+  className?: string;
 
   /** Sets the title text to display at the top of the settings section. */
   title?: string;
@@ -55,6 +61,9 @@ export interface SettingsSectionProps {
   * Describes the properties of a single settings item.
   */
 export interface SettingsItemProps {
+  
+  /** Override class names. */
+  className?: string;
 
   /** Specifies the action control to render alongside the settings item, if any. */
   action?: SettingsActionProps;
@@ -78,6 +87,9 @@ export interface SettingsItemProps {
   * Describes the properties used by the main Settings component.
   */
 export interface SettingsProps {
+  
+  /** Override class names. */
+  className?: string;
 
   /** Defines the settings items to render within the component. */
   settings: SettingsItemProps[];

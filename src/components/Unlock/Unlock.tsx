@@ -12,6 +12,7 @@ import {
 } from "semantic-ui-react";
 
 import { UnlockProps } from "./Unlock.types";
+import { useInverted } from "../../hooks";
 
 const PIN_RULE = /^(\d{4}|\d{6})$/
 const PASSWORD_RULE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g
@@ -30,6 +31,7 @@ const Unlock: React.FC<UnlockProps> = ({
 }: UnlockProps) => {
 
   const { t, i18n } = useTranslation();
+  const inverted = useInverted();
 
   const [credential, setCredential] = useState("");
   const crule = rule || method === "password" ? PASSWORD_RULE : PIN_RULE;
@@ -46,7 +48,11 @@ const Unlock: React.FC<UnlockProps> = ({
   }
 
   return (
-    <Segment basic={basic} textAlign="center">
+    <Segment
+      basic={basic}
+      textAlign="center"
+      inverted={inverted}
+    >
       <Form size={size}>
         <Image
           alt='unlock profile image'

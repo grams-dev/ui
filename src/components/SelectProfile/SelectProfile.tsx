@@ -9,6 +9,7 @@ import { List, Segment } from 'semantic-ui-react';
 import { Profile } from '../../components/Profile';
 
 import { SelectProfileProps } from "./SelectProfile.types";
+import { useInverted } from "../../hooks";
 
 /**
  * Allows users to choose a profile from a list of options. Can be rendered horizontally or vertically
@@ -25,12 +26,14 @@ const SelectProfile: React.FC<SelectProfileProps> = ({
 }) => {
 
   const { t, i18n } = useTranslation();
+  const inverted = useInverted();
 
   return (
     <Segment
       data-testid="SelectProfile"
       basic={basic}
       textAlign="center"
+      inverted={inverted}
     >
       <List
         horizontal={horizontal}

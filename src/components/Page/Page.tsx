@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Grid } from "semantic-ui-react";
 
 import { PageProps } from "./Page.types";
+import { useInverted } from "../../hooks";
 
 /**
  * A basic component used to display the content of the page in a grid.
@@ -19,6 +20,7 @@ const Page: React.FC<PageProps> = ({
 }) => {
 
   const { i18n } = useTranslation();
+  const inverted = useInverted();
 
   const textAlignment = centered ? "center" : i18n.dir() === 'ltr' ? "left" : "right";
 
@@ -28,6 +30,7 @@ const Page: React.FC<PageProps> = ({
       centered
       className="page"
       verticalAlign={verticalAlign}
+      inverted={inverted}
     >
       { !empty &&
         <Grid.Column

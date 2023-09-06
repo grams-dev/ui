@@ -12,6 +12,7 @@ import {
 } from 'semantic-ui-react';
 
 import { SelectLocaleProps, LocaleOption } from "./SelectLocale.types";
+import { useInverted } from "../../hooks";
 
 const DEFAULT_LOCALES: LocaleOption[] = [
   { key: 'en', value: 'en', text: 'English', flag: 'us' },
@@ -32,6 +33,7 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({
 }: SelectLocaleProps) => {
 
   const { t, i18n } = useTranslation();
+  const inverted = useInverted();
 
   const [selected, setSelected] = useState("");
 
@@ -53,7 +55,10 @@ const SelectLocale: React.FC<SelectLocaleProps> = ({
   }
 
   return (
-    <Segment basic={basic}>
+    <Segment 
+      basic={basic}
+      inverted={inverted}
+    >
       <Form size={size}>
         <Form.Dropdown
           button

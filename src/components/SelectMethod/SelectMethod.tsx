@@ -8,6 +8,7 @@ import {
 import { SelectItem } from "../SelectItem";
 
 import { Method, SelectMethodProps } from "./SelectMethod.types";
+import { useInverted } from "../../hooks";
 
 /**
  * Allows users to choose an onboarding method from a list of options. This is sugar for `SelectItem`
@@ -25,6 +26,7 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
 }) => {
 
   const { t, i18n } = useTranslation();
+  const inverted = useInverted();
 
   const DEFAULT_METHODS: Method[] = [
     {
@@ -63,6 +65,7 @@ const SelectMethod: React.FC<SelectMethodProps> = ({
       dir={i18n.dir()}
       data-testid="SelectItem"
       basic={basic}
+      inverted={inverted}
     >
       <SelectItem
         divided={divided}

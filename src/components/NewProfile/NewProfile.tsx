@@ -16,6 +16,7 @@ import {
 } from 'semantic-ui-react';
 
 import { NewProfileProps } from "./NewProfile.types";
+import { useInverted } from '../../hooks';
 
 const PASSWORD_RULE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
 
@@ -34,6 +35,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
 
   const { t, i18n } = useTranslation();
   const direction = i18n.dir() === 'ltr' ? 'left': undefined;
+  const inverted = useInverted();
 
   const [active, setActive] = useState(false);
   const [name, setName] = useState('');
@@ -71,6 +73,7 @@ const NewProfile: React.FC<NewProfileProps> = ({
       dir={i18n.dir()}
       data-testid="NewProfile"
       basic={basic}
+      inverted={inverted}
     >
       <Header as="h1" textAlign="center">
         {title || t('ui:newProfile.title')}

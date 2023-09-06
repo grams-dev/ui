@@ -11,6 +11,7 @@ import {
   Grid,
   Segment
 } from "semantic-ui-react";
+import { useInverted } from "../../hooks";
 
 const MnemomicPhrase = ({ mnemonic, rows, columns, size }) => {
 
@@ -45,6 +46,8 @@ const ViewSeed: React.FC<ViewSeedProps> = ({
   onCopy
 }) => {
 
+  const inverted = useInverted();
+
   const [ack, setAck] = useState(false);
   const onAckChange = (event, data) => { setAck(data.checked) };
 
@@ -52,6 +55,7 @@ const ViewSeed: React.FC<ViewSeedProps> = ({
     <Segment
       data-testid="ViewSeed"
       basic={basic}
+      inverted={inverted}
     >
       <MnemomicPhrase mnemonic={seed} rows={rows} columns={columns} size={size} />
       <Form size={size}>

@@ -6,6 +6,7 @@ import {
 } from 'semantic-ui-react';
 
 import { SelectItemProps } from "./SelectItem.types";
+import { useInverted } from "../../hooks";
 
 /**
  * Allows users to choose an item from a list of options.
@@ -20,12 +21,15 @@ const SelectItem: React.FC<SelectItemProps> = ({
   onSelect
 }) => {
 
+  const inverted = useInverted();
+
   return (
     <List
       data-testid="SelectItem"
       divided={divided}
       size={size}
       selection={selection}
+      inverted={inverted}
     >
       {(items || []).map(item => (
         <List.Item key={item.id} onClick={() => onSelect?.(item.id)} >

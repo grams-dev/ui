@@ -11,7 +11,7 @@ import { Method, SelectMethodProps } from "./SelectMethod.types";
 import { useInverted } from "../../hooks";
 
 /**
- * Allows users to choose an onboarding method from a list of options. This is sugar for `SelectItem`
+ * Sugar for `SelectItem`. Allows users to choose an onboarding method from a list of options.
  * 
  * Each method must be constructed using an id, header, description, and image.
  */

@@ -33,6 +33,7 @@
     "url": "https://github.com/grams-dev/ui/issues"
   },
   "dependencies": {
+    "easyqrcodejs": "^4.4.13",
     "react-tiny-fab": "^4.0.4",
     "uniqid": "^5.4.0"
   },

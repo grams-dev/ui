@@ -2,7 +2,7 @@ import React, {
   useState,
   useEffect
 } from "react";
-import QRCode from "easyqrcodejs";
+import { QRCode } from 'react-qrcode-logo';
 
 import { QRProps } from "./QR.types";
 
@@ -16,9 +16,9 @@ const QR: React.FC<QRProps> = ({
   text
 }) => {
 
-  const code = React.createRef<HTMLDivElement>();
+  //const code = React.createRef<HTMLDivElement>();
 
-  useEffect(() => {
+  /*useEffect(() => {
     new QRCode(code.current, {
       width: size,
       height: size,
@@ -27,13 +27,18 @@ const QR: React.FC<QRProps> = ({
       logoWidth: logoSize,
       logoHeight: logoSize
     });
-  }, [code]);
+  }, [code]);*/
 
   return (
     <div
       data-testid="QR"
     >
-      <div ref={code}></div>
+      <QRCode
+        value={text}
+        logoImage={logo}
+        size={size}
+        removeQrCodeBehindLogo
+      />
     </div>
   );
 }

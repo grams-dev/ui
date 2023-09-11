@@ -14,6 +14,7 @@ import { SelectActionItemProps } from "./SelectAction.types";
  */
 const SelectActionItem: React.FC<SelectActionItemProps> = ({
   children,
+  circular,
   image,
   size = 'mini',
   title,
@@ -24,7 +25,7 @@ const SelectActionItem: React.FC<SelectActionItemProps> = ({
     <List.Item
       data-testid="SelectAction"
     >
-      { image && <Image src={image} size={size} verticalAlign="middle" /> }
+      { image && <Image circular={circular} src={image} size={size} verticalAlign="middle" /> }
       <List.Content>
         <List.Header>{title}</List.Header>
         <List.Description>{description}</List.Description>

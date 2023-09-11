@@ -18,6 +18,7 @@ export type SelectActionSpec = React.FC<SelectActionProps> &
  */
 const SelectAction: SelectActionSpec = ({
   actions,
+  circular,
   divided = true,
   relaxed = true,
   selection = true,
@@ -39,6 +40,7 @@ const SelectAction: SelectActionSpec = ({
         <SelectAction.Item
           key={idx}
           children={action.children}
+          circular={ action.circular || circular }
           image={action.image}
           size={action.size}
           title={action.title}

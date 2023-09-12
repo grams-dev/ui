@@ -23,7 +23,7 @@ const SelectActionItem: React.FC<SelectActionItemProps> = ({
 }) => {
 
   const { i18n } = useTranslation();
-  const direction = i18n.dir() === 'ltr' ? 'left' : 'right';
+  const direction = i18n.dir() === 'ltr' ? 'right' : 'left';
 
   return (
     <List.Item

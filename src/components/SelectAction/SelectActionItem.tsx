@@ -8,6 +8,7 @@ import {
 } from "semantic-ui-react";
 
 import { SelectActionItemProps } from "./SelectAction.types";
+import { useTranslation } from "react-i18next";
 
 /**
  * Allows users to select an action from a button group or dropdown per list item.
@@ -21,6 +22,9 @@ const SelectActionItem: React.FC<SelectActionItemProps> = ({
   description
 }) => {
 
+  const { i18n } = useTranslation();
+  const direction = i18n.dir() === 'ltr' ? 'left' : 'right';
+
   return (
     <List.Item
       data-testid="SelectAction"
@@ -31,7 +35,7 @@ const SelectActionItem: React.FC<SelectActionItemProps> = ({
         <List.Description>{description}</List.Description>
       </List.Content>
       { children && (
-        <List.Content floated="right">
+        <List.Content floated={direction}>
           { children }
         </List.Content>
       )}
